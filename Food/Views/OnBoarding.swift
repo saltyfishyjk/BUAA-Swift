@@ -67,7 +67,8 @@ struct pages: View {
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
             
             NavigationLink(
-                destination: Location().navigationBarBackButtonHidden(true).navigationBarHidden(true),
+                destination: //Location().navigationBarBackButtonHidden(true).navigationBarHidden(true),
+                Register(), 
                 label: {
                     // 设置底部标签，跳转入登陆注册页面
                     Text("立刻启程")
@@ -83,7 +84,8 @@ struct pages: View {
         // 设置右上角箭头➡️
         .navigationBarItems(trailing:
                                 NavigationLink(
-                                    destination: Location().navigationBarBackButtonHidden(true).navigationBarHidden(true),
+                                    destination: //Location().navigationBarBackButtonHidden(true).navigationBarHidden(true),
+                                    Register(),
                                     label: {
                                         Image(systemName: "arrow.right")
                                             .font(Font.system(.title3))

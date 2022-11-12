@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		012CE804291F4915007A1CC3 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012CE803291F4915007A1CC3 /* Register.swift */; };
 		012CE808291F4BFF007A1CC3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012CE807291F4BFF007A1CC3 /* User.swift */; };
+		01C8F213291F7E5100A48DCB /* RequirementText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8F212291F7E5100A48DCB /* RequirementText.swift */; };
+		01C8F215291F7FAF00A48DCB /* FormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8F214291F7FAF00A48DCB /* FormField.swift */; };
+		01C8F217291F8EFE00A48DCB /* UserRegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8F216291F8EFE00A48DCB /* UserRegistrationViewModel.swift */; };
 		0443640924BCBB5200973BE7 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443640824BCBB5200973BE7 /* Meal.swift */; };
 		0457F33324BE409400682CD3 /* CheckOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457F33224BE409400682CD3 /* CheckOut.swift */; };
 		04695B7124BB46DC006E6728 /* FoodApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04695B7024BB46DC006E6728 /* FoodApp.swift */; };
@@ -28,6 +31,9 @@
 /* Begin PBXFileReference section */
 		012CE803291F4915007A1CC3 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		012CE807291F4BFF007A1CC3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		01C8F212291F7E5100A48DCB /* RequirementText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementText.swift; sourceTree = "<group>"; };
+		01C8F214291F7FAF00A48DCB /* FormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormField.swift; sourceTree = "<group>"; };
+		01C8F216291F8EFE00A48DCB /* UserRegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistrationViewModel.swift; sourceTree = "<group>"; };
 		0443640824BCBB5200973BE7 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		0457F33224BE409400682CD3 /* CheckOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOut.swift; sourceTree = "<group>"; };
 		04695B6D24BB46DC006E6728 /* Food.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Food.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +113,9 @@
 				04F7A95124BDE604004123D7 /* OurPicks.swift */,
 				0457F33224BE409400682CD3 /* CheckOut.swift */,
 				012CE803291F4915007A1CC3 /* Register.swift */,
+				01C8F216291F8EFE00A48DCB /* UserRegistrationViewModel.swift */,
+				01C8F212291F7E5100A48DCB /* RequirementText.swift */,
+				01C8F214291F7FAF00A48DCB /* FormField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -190,12 +199,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01C8F213291F7E5100A48DCB /* RequirementText.swift in Sources */,
 				0443640924BCBB5200973BE7 /* Meal.swift in Sources */,
+				01C8F215291F7FAF00A48DCB /* FormField.swift in Sources */,
 				04F7A95224BDE604004123D7 /* OurPicks.swift in Sources */,
 				04695B8724BB47DE006E6728 /* NavBar.swift in Sources */,
 				04695B7324BB46DC006E6728 /* ContentView.swift in Sources */,
 				012CE804291F4915007A1CC3 /* Register.swift in Sources */,
 				04C0197724BBAEF0006050B8 /* Location.swift in Sources */,
+				01C8F217291F8EFE00A48DCB /* UserRegistrationViewModel.swift in Sources */,
 				012CE808291F4BFF007A1CC3 /* User.swift in Sources */,
 				04C0197924BBBFF0006050B8 /* HomeView.swift in Sources */,
 				04C0198024BBDCC0006050B8 /* onBoardingPage.swift in Sources */,
