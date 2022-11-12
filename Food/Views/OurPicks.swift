@@ -72,9 +72,10 @@ struct OurPicks: View {
                 }
                 Spacer()
                 
+                /*
                 Text(card.price)
                     .font(.subheadline)
-                    .bold()
+                    .bold()*/
             }
             .padding(.bottom, 30)
             .padding(.leading, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
@@ -106,7 +107,7 @@ struct OurPicks: View {
                         })
                         .padding(.trailing, 30)
                     }
-                    Text("Nine years earlier, Lorem ipsum dolor sit amet,Morbi sed purus nulla. Curabitur dapibus ultrices lorem vitae tincidunt. Pellentesque quis arcu sit amet urna commodo porttitor. Aenean sit ")
+                    Text(card.context)
                         .padding(.all, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                 }
                 

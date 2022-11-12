@@ -2,7 +2,7 @@
 //  Meal.swift
 //  Food
 //
-//  Created by BqNqNNN on 7/13/20.
+//  Created by YJK on 11/12/22.
 //
 
 import SwiftUI
@@ -66,7 +66,7 @@ struct Meal: View {
                     Text("Description")
                         .font(.system(size: 25, weight: .bold))
                     
-                    Text(placeHolder)
+                    Text(meal.context)
                         .padding(.top, 10)
                         .fixedSize(horizontal: false, vertical: true)
                     
@@ -87,7 +87,7 @@ struct Meal: View {
                             .frame(width: 100)
                     }.padding(.top, 10)
                     
-                    
+                    /*
                     HStack {
                         Text("Price ")
                             .font(.title3)
@@ -98,6 +98,7 @@ struct Meal: View {
                             .bold()
                     }
                     .padding(.top, 10)
+                     */
                 }
                 .padding(.top, 25)
                 .padding(.horizontal)

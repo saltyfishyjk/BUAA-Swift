@@ -2,7 +2,7 @@
 //  HomeView.swift
 //  Food
 //
-//  Created by BqNqNNN on 7/12/20.
+//  Created by YJK on 11/12/22.
 //
 
 import SwiftUI
@@ -19,19 +19,18 @@ struct HomeView: View {
                     //TrendingWeek
                     VStack{
                         HStack {
-                            Text("Trending this week")
+                            Text("近期新闻")
                                 .bold()
                                 .multilineTextAlignment(.trailing)
                                 .padding(.leading, 20)
                             
                             Spacer()
-                            Text("View all >")
+                            Text("浏览更多 >>")
                                 .multilineTextAlignment(.leading)
                                 .foregroundColor(Color(#colorLiteral(red: 0.9580881, green: 0.10593573, blue: 0.3403331637, alpha: 1)))
                                 .padding(.trailing, 20)
                         }
-                        // Card View
-                        
+                        // 首页新闻滚播
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
                                 ForEach(TrendingCard) { card in
@@ -181,7 +180,7 @@ struct SearchBar: View {
             
             VStack {
                 HStack {
-                    Text("Browse")
+                    Text("院会首页")
                         .bold()
                         .font(.title)
                         .multilineTextAlignment(.trailing)
@@ -189,12 +188,14 @@ struct SearchBar: View {
                         .padding(.leading, 20)
                         .padding(.top, -40)
                     Spacer()
+                    /*
                     Text("Filter")
                         .font(.title2)
                         .multilineTextAlignment(.leading)
                         .foregroundColor(.white)
                         .padding(.trailing, 20) 
                         .padding(.top, -30)
+                     */
                 }
                 HStack {
                     Image(systemName: "magnifyingglass")

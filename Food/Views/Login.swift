@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Login: View {
     @ObservedObject private var userRistrantionViewModel = UserregistrationViewModel()
+    @State private var showAlert = false
      
     var body: some View {
         VStack {
@@ -59,6 +60,9 @@ struct Login: View {
             Spacer()
             
         }.padding()
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text("登录失败"), message: Text("用户名或密码不对，请检查你输入的用户名和密码"), primaryButton: .default(Text("Yes")), secondaryButton: .default(Text("No")))
+            }
         
     }
 }

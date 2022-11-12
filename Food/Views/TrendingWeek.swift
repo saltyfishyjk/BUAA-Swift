@@ -37,10 +37,11 @@ struct TrendingWeek: View {
                         .font(.subheadline)
                 }
                 Spacer()
-                
+                /*
                 Text(trendingMeal.price)
                     .font(.subheadline)
                     .bold()
+                 */
             }
             .padding(.bottom, 30)
             .padding(.leading, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
