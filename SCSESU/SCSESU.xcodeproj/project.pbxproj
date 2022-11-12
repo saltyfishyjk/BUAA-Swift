@@ -15,6 +15,9 @@
 		012CE7E8291E8B91007A1CC3 /* SCSESUUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012CE7E7291E8B91007A1CC3 /* SCSESUUITests.swift */; };
 		012CE7EA291E8B91007A1CC3 /* SCSESUUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012CE7E9291E8B91007A1CC3 /* SCSESUUITestsLaunchTests.swift */; };
 		012CE7F9291E8E2B007A1CC3 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012CE7F8291E8E2B007A1CC3 /* Welcome.swift */; };
+		012CE7FB291E927C007A1CC3 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012CE7FA291E927C007A1CC3 /* Register.swift */; };
+		012CE7FE291E958E007A1CC3 /* Requirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012CE7FD291E958E007A1CC3 /* Requirement.swift */; };
+		012CE800291F29A5007A1CC3 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012CE7FF291F29A5007A1CC3 /* Form.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,9 @@
 		012CE7E7291E8B91007A1CC3 /* SCSESUUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCSESUUITests.swift; sourceTree = "<group>"; };
 		012CE7E9291E8B91007A1CC3 /* SCSESUUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCSESUUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		012CE7F8291E8E2B007A1CC3 /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
+		012CE7FA291E927C007A1CC3 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		012CE7FD291E958E007A1CC3 /* Requirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requirement.swift; sourceTree = "<group>"; };
+		012CE7FF291F29A5007A1CC3 /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,11 +102,15 @@
 		012CE7CB291E8B8D007A1CC3 /* SCSESU */ = {
 			isa = PBXGroup;
 			children = (
+				012CE7FC291E953F007A1CC3 /* RegisterAndLogin */,
 				012CE7CC291E8B8D007A1CC3 /* SCSESUApp.swift */,
 				012CE7CE291E8B8D007A1CC3 /* ContentView.swift */,
 				012CE7D0291E8B91007A1CC3 /* Assets.xcassets */,
 				012CE7D2291E8B91007A1CC3 /* Preview Content */,
 				012CE7F8291E8E2B007A1CC3 /* Welcome.swift */,
+				012CE7FA291E927C007A1CC3 /* Register.swift */,
+				012CE7FF291F29A5007A1CC3 /* Form.swift */,
+				012CE7FD291E958E007A1CC3 /* Requirement.swift */,
 			);
 			path = SCSESU;
 			sourceTree = "<group>";
@@ -128,6 +138,13 @@
 				012CE7E9291E8B91007A1CC3 /* SCSESUUITestsLaunchTests.swift */,
 			);
 			path = SCSESUUITests;
+			sourceTree = "<group>";
+		};
+		012CE7FC291E953F007A1CC3 /* RegisterAndLogin */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RegisterAndLogin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,8 +278,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				012CE7CF291E8B8D007A1CC3 /* ContentView.swift in Sources */,
+				012CE7FE291E958E007A1CC3 /* Requirement.swift in Sources */,
 				012CE7F9291E8E2B007A1CC3 /* Welcome.swift in Sources */,
+				012CE7FB291E927C007A1CC3 /* Register.swift in Sources */,
 				012CE7CD291E8B8D007A1CC3 /* SCSESUApp.swift in Sources */,
+				012CE800291F29A5007A1CC3 /* Form.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

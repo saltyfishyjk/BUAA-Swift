@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  SCSESU
+//  Food
 //
-//  Created by jinshenghao on 2022/11/11.
+//  Created by BqNqNNN on 7/12/20.
 //
 
 import SwiftUI
@@ -10,12 +10,10 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            OnBoarding()
+            
         }
-        .padding()
+        
     }
 }
 
