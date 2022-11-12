@@ -1,18 +1,18 @@
 //
-//  Register.swift
+//  Login.swift
 //  Food
 //
-//  Created by YJK on 11/12/22.
+//  Created by jinshenghao on 2022/11/12.
 //
 
 import SwiftUI
 
-struct Register: View {
+struct Login: View {
     @ObservedObject private var userRistrantionViewModel = UserregistrationViewModel()
      
     var body: some View {
         VStack {
-            Text("注册账户")
+            Text("登录")
                 .font(.system(.largeTitle, design: .rounded))
                 .bold()
                 .padding(.bottom, 30)
@@ -27,18 +27,11 @@ struct Register: View {
                 RequirementText(iconName: "lock.open", iconColor: userRistrantionViewModel.isPasswordCapitalLetter ? Color.secondary : Color(red: 251/255, green: 128/255, blue: 128/255), text: "至少1个大写字母", isStrikeThrough: userRistrantionViewModel.isPasswordCapitalLetter)
             }
             .padding()
-            
-            FormField(fieldName: "重复密码", fieldValue: $userRistrantionViewModel.passwordConfirm, isSecure: true)
-            RequirementText(iconColor: userRistrantionViewModel.isPasswordComfirmValid ? Color.secondary : Color(red: 251/255, green: 128/255, blue: 128/255), text: "重复密码应当一致",  isStrikeThrough: userRistrantionViewModel.isPasswordComfirmValid
-            )
-            .padding()
-            .padding(.bottom, 50)
-
             NavigationLink(
                 destination:
-                    Login().navigationBarBackButtonHidden(true).navigationBarHidden(true),
+                    NavBar().navigationBarBackButtonHidden(true).navigationBarHidden(true),
                 label:{
-                    Text("注册")
+                    Text("登录")
                         .font(.system(.body, design: .rounded))
                         .foregroundColor(.white)
                         .bold()
@@ -49,15 +42,14 @@ struct Register: View {
                         .padding(.horizontal)
             })
             HStack {
-                Text("已经有账户了？")
+                Text("还没有账户？")
                     .font(.system(.body, design: .rounded))
                     .bold()
-                
                 NavigationLink(
                     destination:
-                        Login().navigationBarBackButtonHidden(true).navigationBarHidden(true),
+                        Register().navigationBarBackButtonHidden(true).navigationBarHidden(true),
                     label:{
-                        Text("登录")
+                        Text("注册")
                             .font(.system(.body, design: .rounded))
                             .bold()
                             .foregroundColor(Color(red: 251/255, green:  128/255, blue: 128/255))
@@ -71,8 +63,8 @@ struct Register: View {
     }
 }
 
-struct Register_Previews: PreviewProvider {
+struct Login_Previews: PreviewProvider {
     static var previews: some View {
-        Register()
+        Login()
     }
 }

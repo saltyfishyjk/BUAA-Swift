@@ -12,6 +12,7 @@
 		01C8F213291F7E5100A48DCB /* RequirementText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8F212291F7E5100A48DCB /* RequirementText.swift */; };
 		01C8F215291F7FAF00A48DCB /* FormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8F214291F7FAF00A48DCB /* FormField.swift */; };
 		01C8F217291F8EFE00A48DCB /* UserRegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8F216291F8EFE00A48DCB /* UserRegistrationViewModel.swift */; };
+		01C8F219291F96AC00A48DCB /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8F218291F96AC00A48DCB /* Login.swift */; };
 		0443640924BCBB5200973BE7 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443640824BCBB5200973BE7 /* Meal.swift */; };
 		0457F33324BE409400682CD3 /* CheckOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457F33224BE409400682CD3 /* CheckOut.swift */; };
 		04695B7124BB46DC006E6728 /* FoodApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04695B7024BB46DC006E6728 /* FoodApp.swift */; };
@@ -34,6 +35,7 @@
 		01C8F212291F7E5100A48DCB /* RequirementText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementText.swift; sourceTree = "<group>"; };
 		01C8F214291F7FAF00A48DCB /* FormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormField.swift; sourceTree = "<group>"; };
 		01C8F216291F8EFE00A48DCB /* UserRegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistrationViewModel.swift; sourceTree = "<group>"; };
+		01C8F218291F96AC00A48DCB /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		0443640824BCBB5200973BE7 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		0457F33224BE409400682CD3 /* CheckOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOut.swift; sourceTree = "<group>"; };
 		04695B6D24BB46DC006E6728 /* Food.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Food.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +115,7 @@
 				04F7A95124BDE604004123D7 /* OurPicks.swift */,
 				0457F33224BE409400682CD3 /* CheckOut.swift */,
 				012CE803291F4915007A1CC3 /* Register.swift */,
+				01C8F218291F96AC00A48DCB /* Login.swift */,
 				01C8F216291F8EFE00A48DCB /* UserRegistrationViewModel.swift */,
 				01C8F212291F7E5100A48DCB /* RequirementText.swift */,
 				01C8F214291F7FAF00A48DCB /* FormField.swift */,
@@ -214,6 +217,7 @@
 				0457F33324BE409400682CD3 /* CheckOut.swift in Sources */,
 				04C0197524BB75FA006050B8 /* OnBoarding.swift in Sources */,
 				04695B7124BB46DC006E6728 /* FoodApp.swift in Sources */,
+				01C8F219291F96AC00A48DCB /* Login.swift in Sources */,
 				04C0197B24BBC848006050B8 /* TrendingWeek.swift in Sources */,
 				04C0197E24BBD003006050B8 /* Card.swift in Sources */,
 			);
