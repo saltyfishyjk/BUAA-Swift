@@ -1,13 +1,14 @@
 //
 //  Login.swift
-//  Food
+//  BUAASCSE
 //
-//  Created by jinshenghao on 2022/11/12.
+//  Created by YJK on 2022/11/12.
 //
 
 import SwiftUI
 
 struct Login: View {
+    @EnvironmentObject var userData:UserData
     @ObservedObject private var userRistrantionViewModel = UserregistrationViewModel()
     @State private var showAlert = false
      

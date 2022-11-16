@@ -1,22 +1,24 @@
 //
 //  Meal.swift
-//  Food
+//  SCSE
 //
 //  Created by YJK on 11/12/22.
 //
 
 import SwiftUI
 
-struct Meal: View {
+// 文章详情页
+struct ArtivleView: View {
+    @EnvironmentObject var userData:UserData
     @State private var quantity = 0
-    @State var meal : Card
+    @State var article : Article
     @State var heart = "heart.fill"
     var placeHolder = "Nine years earlier, Lorem ipsum dolor sit amet,Morbi sed purus nulla. Curabitur dapibus ultrices lorem vitae tincidunt. Pellentesque quis arcu sit amet urna commodo porttitor. Aenean sit "
     var body: some View {
         VStack {
             ScrollView(.vertical, showsIndicators: false, content: {
                 GeometryReader{reader in
-                    Image(meal.image)
+                    Image(article.image)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         
@@ -29,7 +31,7 @@ struct Meal: View {
                 
                 VStack(alignment: .leading,spacing: 15){
                     
-                    Text(meal.title)
+                    Text(article.title)
                         .font(.system(size: 35, weight: .bold))
                     
                     
@@ -43,7 +45,7 @@ struct Meal: View {
                     }
                     
                     HStack {
-                        Text(meal.descrip)
+                        Text(article.date)
                             .font(.caption)
                             .foregroundColor(.gray)
                             .padding(.top,5)
@@ -66,7 +68,7 @@ struct Meal: View {
                     Text("Description")
                         .font(.system(size: 25, weight: .bold))
                     
-                    Text(meal.context)
+                    Text(article.context)
                         .padding(.top, 10)
                         .fixedSize(horizontal: false, vertical: true)
                     
@@ -113,7 +115,7 @@ struct Meal: View {
             HStack{
                 Spacer()
                 Button(action: {}, label: {
-                    Text("Add to Cart")
+                    Text("添加到收藏")
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                         .padding(.vertical, 10)
@@ -135,6 +137,6 @@ struct Meal: View {
 
 struct Meal_Previews: PreviewProvider {
     static var previews: some View {
-        Meal(meal: TrendingCard[0])
+        ArtivleView(article: articleData[0])
     }
 }

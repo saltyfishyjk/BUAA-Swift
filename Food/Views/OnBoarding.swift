@@ -11,7 +11,7 @@ import UIKit
 // 欢迎页
 
 struct OnBoarding: View {
-
+    @EnvironmentObject var userData:UserData
     @State var showSheetView = false
     
     init() {
@@ -24,7 +24,7 @@ struct OnBoarding: View {
         NavigationView {
             pages()
         }.sheet(isPresented: $showSheetView) {
-            Location()
+            Login()
         }.animation(.none)
     }
     

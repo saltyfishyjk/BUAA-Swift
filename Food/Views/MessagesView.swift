@@ -1,13 +1,16 @@
 //
 //  CheckOut.swift
-//  Food
+//  SCSESU
 //
-//  Created by BqNqNNN on 7/14/20.
+//  Created by YJK on 2022/11/16.
 //
 
 import SwiftUI
 
-struct CheckOut: View {
+// Favorite
+
+struct MessagesView: View {
+    @EnvironmentObject var userData:UserData
     var body: some View {
         ScrollView{
             
@@ -59,6 +62,6 @@ struct CheckOut: View {
 
 struct CheckOut_Previews: PreviewProvider {
     static var previews: some View {
-        CheckOut()
+        MessagesView()
     }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Register: View {
+    @EnvironmentObject var userData:UserData
     @ObservedObject private var userRistrantionViewModel = UserregistrationViewModel()
      
     var body: some View {

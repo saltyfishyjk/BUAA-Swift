@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct TrendingWeek: View {
-    @State var trendingMeal : Card
+    @EnvironmentObject var userData:UserData
+    @State var trendingMeal : Article
     var body: some View {
         VStack {
             Image(trendingMeal.image)
@@ -23,7 +24,7 @@ struct TrendingWeek: View {
             }
             
             HStack {
-                Text(trendingMeal.descrip)
+                Text(trendingMeal.date)
                     .font(.subheadline)
                     .foregroundColor(.gray)
                     .padding(.leading, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
@@ -57,6 +58,6 @@ struct TrendingWeek: View {
 
 struct TrendingWeek_Previews: PreviewProvider {
     static var previews: some View {
-        TrendingWeek(trendingMeal: TrendingCard[0])
+        TrendingWeek(trendingMeal: articleData[0])
     }
 }

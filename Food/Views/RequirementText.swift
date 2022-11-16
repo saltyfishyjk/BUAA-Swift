@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RequirementText: View {
+    @EnvironmentObject var userData:UserData
     var iconName = "xmark.square"
     var iconColor = Color(red: 251/255, green: 128/255, blue:128/255)
     var text = ""

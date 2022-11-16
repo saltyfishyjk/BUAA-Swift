@@ -1,13 +1,15 @@
 //
 //  FormField.swift
-//  Food
+//  SCSESU
 //
-//  Created by jinshenghao on 2022/11/12.
+//  Created by YJK on 2022/11/12.
 //
 
 import SwiftUI
 
+// 文本编辑框，用于组成一部分
 struct FormField: View {
+    @EnvironmentObject var userData:UserData
     var fieldName = ""
     @Binding var fieldValue:String
     var isSecure = false

@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct NavBar: View {
+    @EnvironmentObject var userData:UserData
     @State private var selection = 1
     init() {
         UITabBar.appearance().backgroundColor = .white
@@ -23,10 +24,10 @@ struct NavBar: View {
                 
             }.tag(1)
             
-            CheckOut().tabItem {
+            MessagesView().tabItem {
                 VStack {
-                    Image(systemName: "heart.fill")
-                    Text("Favorite")
+                    Image(systemName: "envelope.fill")
+                    Text("Message")
                 }
                 
             }.tag(2)
@@ -39,7 +40,7 @@ struct NavBar: View {
                 
             }.tag(3)
         }
-        .accentColor(.red)
+        .accentColor(.blue)
     }
 }
 

@@ -1,14 +1,16 @@
 //
 //  OurPicks.swift
-//  Food
+//  SCSESU
 //
-//  Created by BqNqNNN on 7/14/20.
+//  Created by YJK on 2022/11/16.
 //
 
 import SwiftUI
 
+// 精选内容页
 struct OurPicks: View {
-    @Binding var card : Card
+    @EnvironmentObject var userData:UserData
+    @Binding var card : Article
     @Binding var hero : Bool
     @State var heart = "heart.fill"
     var body: some View {
@@ -16,17 +18,17 @@ struct OurPicks: View {
             ZStack {
                 Image(card.image)
                     .resizable()
-                    .frame(width: self.card.expand ? (UIScreen.main.bounds.width) : (UIScreen.main.bounds.width)*0.9 , height: self.card.expand ? (UIScreen.main.bounds.height)*0.3 : (UIScreen.main.bounds.height)*0.25 )
-                    .cornerRadius(self.card.expand ? 5 : 20)
+                    .frame(width: self.card.isStared ? (UIScreen.main.bounds.width) : (UIScreen.main.bounds.width)*0.9 , height: self.card.isStared ? (UIScreen.main.bounds.height)*0.3 : (UIScreen.main.bounds.height)*0.25 )
+                    .cornerRadius(self.card.isStared ? 5 : 20)
                     .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                if (self.card.expand) {
+                if (self.card.isStared) {
                     HStack{
                         Spacer()
                         Button(action: {
                             
                             withAnimation(.interactiveSpring(response: 0.5, dampingFraction: 0.8, blendDuration: 0)){
                                 
-                                self.card.expand.toggle()
+                                self.card.isStared.toggle()
                                 self.hero.toggle()
                             }
                             
@@ -54,13 +56,13 @@ struct OurPicks: View {
                     .padding(.all, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                 Spacer()
             }
-            .padding(.leading, self.card.expand ? 10 : 20)
+            .padding(.leading, self.card.isStared ? 10 : 20)
             
             HStack {
-                Text(card.descrip)
+                Text(card.date)
                     .font(.subheadline)
                     .foregroundColor(.gray)
-                    .padding(.leading, self.card.expand ? 20 : 30)
+                    .padding(.leading, self.card.isStared ? 20 : 30)
                 Spacer()
             }
             
@@ -80,13 +82,13 @@ struct OurPicks: View {
             .padding(.bottom, 30)
             .padding(.leading, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
             .padding(.trailing, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-            .padding(.leading, self.card.expand ? 10 : 20)
-            .padding(.trailing, self.card.expand ? 10 : 20)
+            .padding(.leading, self.card.isStared ? 10 : 20)
+            .padding(.trailing, self.card.isStared ? 10 : 20)
             
             
             
             
-            if self.card.expand {
+            if self.card.isStared {
                 VStack{
                     HStack {
                         Text("Description")
@@ -110,12 +112,13 @@ struct OurPicks: View {
                     Text(card.context)
                         .padding(.all, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                 }
-                
-                
             }
-            
-            
-            
         }
+    }
+}
+
+struct OurPicks_Previews: PreviewProvider {
+    static var previews: some View {
+        OurPicks(card:.constant(articleData[0]), hero:.constant(false))
     }
 }
