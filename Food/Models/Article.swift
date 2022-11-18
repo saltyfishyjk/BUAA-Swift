@@ -32,3 +32,5 @@ var articleData = [
 ]
 
 var FoodTypes = ["Pizza","Drinks","Tacos","Burger","Fries","Top"]
+var articleTypes = ["Activity","Teacher","Party"]
+

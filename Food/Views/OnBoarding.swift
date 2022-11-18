@@ -11,7 +11,7 @@ import UIKit
 // 欢迎页
 
 struct OnBoarding: View {
-    @EnvironmentObject var userData:UserData
+    //@EnvironmentObject var userData:UserData
     @State var showSheetView = false
     
     init() {
@@ -43,7 +43,7 @@ struct pages: View {
     var body: some View {
         VStack {
                 TabView {
-                    ForEach(Data) { page in
+                    ForEach(loadingData) { page in
                         GeometryReader { g in
                             VStack {
                                 // 设置图片
@@ -62,6 +62,7 @@ struct pages: View {
                             .opacity(Double(g.frame(in : . global).minX)/200+1)
                         }
                     }
+                    //Login()
                 }
                 .edgesIgnoringSafeArea(.top)
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))

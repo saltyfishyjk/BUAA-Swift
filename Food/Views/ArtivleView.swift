@@ -53,7 +53,8 @@ struct ArtivleView: View {
                         
                         Button(action: {
                             withAnimation(.spring(dampingFraction: 0.5)) {
-                                heart = "heart"
+                                if(heart == "heart.fill") {heart = "heart"}
+                                else {heart="heart.fill"}
                             }
                         }, label: {
                             Image(systemName: heart)

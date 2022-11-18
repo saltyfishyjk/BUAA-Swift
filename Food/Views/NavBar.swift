@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct NavBar: View {
-    @EnvironmentObject var userData:UserData
+    //@EnvironmentObject var userData:UserData
     @State private var selection = 1
     init() {
         UITabBar.appearance().backgroundColor = .white
@@ -24,7 +24,8 @@ struct NavBar: View {
                 
             }.tag(1)
             
-            MessagesView().tabItem {
+            //MessagesView().tabItem {
+            IssusPageView().tabItem {
                 VStack {
                     Image(systemName: "envelope.fill")
                     Text("Message")

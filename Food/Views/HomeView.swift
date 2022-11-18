@@ -10,7 +10,7 @@ import SwiftUI
 // Home视图
 
 struct HomeView: View {
-    @EnvironmentObject var userData:UserData
+    //@EnvironmentObject var userData:UserData
     @State var hero = false
     @State var data = articleData
     var body: some View {
@@ -68,20 +68,25 @@ struct HomeView: View {
                         }
                         // Categories View
                         HStack(spacing: 10) {
-                            ForEach(1 ..< 5) { i in
-                                VStack {
-                                    Image("categ-\(String(i))")
-                                    Text(FoodTypes[Int(i)-1])
-                                        .font(.subheadline)
-                                        .bold()
-                                }
-                                .frame(width: 80, height: 100, alignment: .center)
-                                .background(Color.white)
-                                .cornerRadius(15)
+                            ForEach(1 ..< 4) { i in
+                                NavigationLink(
+                                    destination: ArticleListView(data: data.filter{ $0.type == articleTypes[Int(i)-1] }),
+                                    label: {
+                                        VStack {
+                                            Image("categ-\(String(i))")
+                                            Text(articleTypes[Int(i)-1])
+                                                .font(.subheadline)
+                                                .bold()
+                                        }
+                                        .frame(width: 80, height: 100, alignment: .center)
+                                        .background(Color.white)
+                                        .cornerRadius(15)
+                                    }
+                                    )
                             }
                         }
                         
-                        HStack(spacing: 10) {
+                        /*HStack(spacing: 10) {
                             ForEach(3 ..< 7) { i in
                                 VStack {
                                     Image("categ-\(String(i))")
@@ -93,7 +98,7 @@ struct HomeView: View {
                                 .background(Color.white)
                                 .cornerRadius(15)
                             }
-                        }
+                        }*/
                         
                     }
                     .shadow(radius: 1)
@@ -138,10 +143,12 @@ struct HomeView: View {
                                 }
                                 // going to increase height based on expand...
                                 .frame(height: self.data[i].isStared ? UIScreen.main.bounds.height : 250)
-                                .simultaneousGesture(DragGesture(minimumDistance: self.data[i].isStared ? 0 : 800).onChanged({ (_) in
+                                /*.simultaneousGesture(DragGesture(minimumDistance: self.data[i].isStared ? 0 : 800).onChanged({ (_) in
                                     
                                     print("dragging")
-                                }))
+                                })
+                                
+                                )*/
                             }
                             
                             
