@@ -67,19 +67,19 @@ struct test: View {
                     }
                 }
                 VStack {
-                    Text("登录")
+                    Text("登录与注册")
                         .font(.system(.largeTitle, design: .rounded))
                         .bold()
                         .padding(.bottom, 30)
                     // 用户名
                     FormField(fieldName: "用户名", fieldValue: $userRistrantionViewModel.name)
-                    RequirementText(iconColor: userRistrantionViewModel.isNameLengthVaild ? Color.secondary : Color(red:251/255, green: 128/255, blue:128/255), text: "至少4个字符", isStrikeThrough: userRistrantionViewModel.isNameLengthVaild)
+                    RequirementText(iconColor: userRistrantionViewModel.isNameLengthVaild ? Color.secondary : Color(red:251/255, green: 128/255, blue:128/255), text: "建议至少4个字符", isStrikeThrough: userRistrantionViewModel.isNameLengthVaild)
                         .padding()
                     FormField(fieldName: "密码", fieldValue: $userRistrantionViewModel.password, isSecure: true)
                     // 密码
                     VStack {
-                        RequirementText(iconName: "lock.open", iconColor: userRistrantionViewModel.isPasswordLengthVaild ? Color.secondary : Color(red: 251/255, green: 128/255, blue: 128/255), text:"至少8个字符", isStrikeThrough: userRistrantionViewModel.isPasswordLengthVaild)
-                        RequirementText(iconName: "lock.open", iconColor: userRistrantionViewModel.isPasswordCapitalLetter ? Color.secondary : Color(red: 251/255, green: 128/255, blue: 128/255), text: "至少1个大写字母", isStrikeThrough: userRistrantionViewModel.isPasswordCapitalLetter)
+                        RequirementText(iconName: "lock.open", iconColor: userRistrantionViewModel.isPasswordLengthVaild ? Color.secondary : Color(red: 251/255, green: 128/255, blue: 128/255), text:"建议至少8个字符", isStrikeThrough: userRistrantionViewModel.isPasswordLengthVaild)
+                        RequirementText(iconName: "lock.open", iconColor: userRistrantionViewModel.isPasswordCapitalLetter ? Color.secondary : Color(red: 251/255, green: 128/255, blue: 128/255), text: "建议至少1个大写字母", isStrikeThrough: userRistrantionViewModel.isPasswordCapitalLetter)
                     }
                     .padding()
                     
@@ -155,10 +155,10 @@ struct test: View {
                                 .bold()
                                 .padding()
                                 .frame(minWidth: 0, maxWidth: .infinity)
-                                .background(LinearGradient(gradient: Gradient(colors: [Color(red:251/255, green:128/255, blue: 128/255), Color(red: 253/255, green: 193/255, blue: 104/255)]), startPoint: .leading, endPoint: .trailing))
+                                .background(LinearGradient(gradient: Gradient(colors: [Color(red:144/255, green:42/255, blue:78/255), Color(red:223/255, green:125/255, blue:125/255)]), startPoint: .leading, endPoint: .trailing))
                                 .cornerRadius(10)
                                 .padding(.horizontal)
-                    }).padding()
+                    })
                         .alert(isPresented: $registerAlert) {
                             Alert(title: Text("注册失败"), message: Text("用户名重复或用户名不能为空"))
                         }
