@@ -212,7 +212,7 @@ struct OurPicks: View {
                             
                             Button(action: { self.commentSheet=true }, label: {
                                 VStack{
-                                    Image(systemName: "tray.and.arrow.up")
+                                    Image(systemName: "bubble.left")
                                         .font(.system(size: 20))
                                         .foregroundColor(Color.blue.opacity(0.85))
                                     //.padding(10)
@@ -306,14 +306,15 @@ struct WriteCommentView: View {
             
             
             Button(action: {
-                
-                
                     self.releaseAlert=true
-                
-                
-            },
-                   
-                   label: {Text("提交")})
+            }
+                   //,label: {Text("提交")}
+            ) {
+                HStack {
+                    Image(systemName: "paperplane").font(.title)
+                    Text("提交")
+                }
+            }
             .alert(isPresented: self.$releaseAlert) {
                 
                 if(!self.getImage.isEmpty){
@@ -328,24 +329,16 @@ struct WriteCommentView: View {
                             Text("立即发布"),
                             action: {
                                 self.upload()
-                                
-                                
                             }
                         )
                     )}
                 else {
                    return Alert(
                         title: Text("图片不能为空"),
-                        
                         message: Text("请添加图片")
                     )
-                    
                 }
-                
-                
-                
-                
-                     }
+            }
                     
             
             
@@ -356,7 +349,7 @@ struct WriteCommentView: View {
             VStack{
                 Divider().foregroundColor(Color.gray.opacity(0.5)).padding(5)
                 HStack{
-                    Image(systemName: "camera")
+                    Image(systemName: "camera.circle")
                         .font(.system(size: 25))
                         .foregroundColor(Color.gray.opacity(0.85))
                         .padding(10)
