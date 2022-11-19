@@ -70,37 +70,38 @@ func initMyself() -> Bool{
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
     
-    /*
-    guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
-     else {
-         fatalError("Couldn't find \(filename) in main bundle.")
-     }
-    do {
-        data = try Data(contentsOf: file)
-    } catch {
-        fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
-    }*/
-    
-    
-    
-    let sanboxfilename = getDocumentsDirectory().appendingPathComponent(filename)
-
-    
-    if FileManager.default.fileExists(atPath: sanboxfilename.path) {
-        data = try! Data.init(contentsOf: sanboxfilename)
-    } else {
-         guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
-         else {
-             fatalError("Couldn't find \(filename) in main bundle.")
-         }
+  var ttt=2
+    if(ttt==1){
+        guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
+        else {
+            fatalError("Couldn't find \(filename) in main bundle.")
+        }
         do {
             data = try Data(contentsOf: file)
         } catch {
             fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
         }
+        
     }
-  
-
+    else {
+        let sanboxfilename = getDocumentsDirectory().appendingPathComponent(filename)
+        
+        
+        if FileManager.default.fileExists(atPath: sanboxfilename.path) {
+            data = try! Data.init(contentsOf: sanboxfilename)
+        } else {
+            guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
+            else {
+                fatalError("Couldn't find \(filename) in main bundle.")
+            }
+            do {
+                data = try Data(contentsOf: file)
+            } catch {
+                fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
+            }
+        }
+        
+    }
     
     
     

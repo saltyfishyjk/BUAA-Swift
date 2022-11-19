@@ -27,6 +27,14 @@
 		01B1565A2927A68200ACA104 /* UserPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B156592927A68100ACA104 /* UserPreference.swift */; };
 		01B1565D2927BB3700ACA104 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B1565C2927BB3700ACA104 /* ProfileView.swift */; };
 		01B1565F2927BE4700ACA104 /* HArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B1565E2927BE4700ACA104 /* HArticleView.swift */; };
+		01B156612928F20600ACA104 /* 截屏2022-09-25 17.43.43.png in Resources */ = {isa = PBXBuildFile; fileRef = 01B156602928F20600ACA104 /* 截屏2022-09-25 17.43.43.png */; };
+		01B156632928F91600ACA104 /* IMG_5286.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01B156622928F91600ACA104 /* IMG_5286.jpg */; };
+		01B156652928F9E800ACA104 /* IMG_5475.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01B156642928F9E800ACA104 /* IMG_5475.jpg */; };
+		01B156672928FA9E00ACA104 /* IMG_5476.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01B156662928FA9E00ACA104 /* IMG_5476.jpg */; };
+		01B156692928FC6100ACA104 /* IMG_5480.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01B156682928FC6100ACA104 /* IMG_5480.jpg */; };
+		01B1566B2928FC6700ACA104 /* IMG_5479.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01B1566A2928FC6700ACA104 /* IMG_5479.jpg */; };
+		01B1566D2928FD2400ACA104 /* IMG_5482.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01B1566C2928FD2400ACA104 /* IMG_5482.jpg */; };
+		01B1566F2928FEC300ACA104 /* IMG_5484.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01B1566E2928FEC300ACA104 /* IMG_5484.jpg */; };
 		01C8F213291F7E5100A48DCB /* RequirementText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8F212291F7E5100A48DCB /* RequirementText.swift */; };
 		01C8F215291F7FAF00A48DCB /* FormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8F214291F7FAF00A48DCB /* FormField.swift */; };
 		01C8F217291F8EFE00A48DCB /* UserRegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C8F216291F8EFE00A48DCB /* UserRegistrationViewModel.swift */; };
@@ -67,6 +75,14 @@
 		01B156592927A68100ACA104 /* UserPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreference.swift; sourceTree = "<group>"; };
 		01B1565C2927BB3700ACA104 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		01B1565E2927BE4700ACA104 /* HArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HArticleView.swift; sourceTree = "<group>"; };
+		01B156602928F20600ACA104 /* 截屏2022-09-25 17.43.43.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "截屏2022-09-25 17.43.43.png"; sourceTree = "<group>"; };
+		01B156622928F91600ACA104 /* IMG_5286.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_5286.jpg; sourceTree = "<group>"; };
+		01B156642928F9E800ACA104 /* IMG_5475.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_5475.jpg; sourceTree = "<group>"; };
+		01B156662928FA9E00ACA104 /* IMG_5476.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_5476.jpg; sourceTree = "<group>"; };
+		01B156682928FC6100ACA104 /* IMG_5480.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_5480.jpg; sourceTree = "<group>"; };
+		01B1566A2928FC6700ACA104 /* IMG_5479.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_5479.jpg; sourceTree = "<group>"; };
+		01B1566C2928FD2400ACA104 /* IMG_5482.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_5482.jpg; sourceTree = "<group>"; };
+		01B1566E2928FEC300ACA104 /* IMG_5484.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_5484.jpg; sourceTree = "<group>"; };
 		01C8F212291F7E5100A48DCB /* RequirementText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementText.swift; sourceTree = "<group>"; };
 		01C8F214291F7FAF00A48DCB /* FormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormField.swift; sourceTree = "<group>"; };
 		01C8F216291F8EFE00A48DCB /* UserRegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistrationViewModel.swift; sourceTree = "<group>"; };
@@ -111,6 +127,14 @@
 		01A9B0AF29251ACB00220F32 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				01B156662928FA9E00ACA104 /* IMG_5476.jpg */,
+				01B1566E2928FEC300ACA104 /* IMG_5484.jpg */,
+				01B156682928FC6100ACA104 /* IMG_5480.jpg */,
+				01B1566C2928FD2400ACA104 /* IMG_5482.jpg */,
+				01B156622928F91600ACA104 /* IMG_5286.jpg */,
+				01B156602928F20600ACA104 /* 截屏2022-09-25 17.43.43.png */,
+				01B156642928F9E800ACA104 /* IMG_5475.jpg */,
+				01B1566A2928FC6700ACA104 /* IMG_5479.jpg */,
 				01A9B0B229251B1F00220F32 /* testimg.png */,
 				01A9B0B029251AE200220F32 /* c005_1.jpg */,
 			);
@@ -273,12 +297,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01B1566D2928FD2400ACA104 /* IMG_5482.jpg in Resources */,
+				01B156652928F9E800ACA104 /* IMG_5475.jpg in Resources */,
+				01B156632928F91600ACA104 /* IMG_5286.jpg in Resources */,
+				01B1566B2928FC6700ACA104 /* IMG_5479.jpg in Resources */,
 				01B156582927A5FC00ACA104 /* Article.json in Resources */,
 				01A9B0AA2925176A00220F32 /* UserInfo.json in Resources */,
+				01B156692928FC6100ACA104 /* IMG_5480.jpg in Resources */,
+				01B156612928F20600ACA104 /* 截屏2022-09-25 17.43.43.png in Resources */,
 				04695B7824BB46DE006E6728 /* Preview Assets.xcassets in Resources */,
 				01A9B0AC2925177C00220F32 /* Comment.json in Resources */,
 				01A9B0B129251AE200220F32 /* c005_1.jpg in Resources */,
 				01A9B0A82925175100220F32 /* Issue.json in Resources */,
+				01B1566F2928FEC300ACA104 /* IMG_5484.jpg in Resources */,
+				01B156672928FA9E00ACA104 /* IMG_5476.jpg in Resources */,
 				04695B7524BB46DE006E6728 /* Assets.xcassets in Resources */,
 				01A9B0B329251B1F00220F32 /* testimg.png in Resources */,
 			);

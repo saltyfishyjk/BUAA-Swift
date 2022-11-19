@@ -16,7 +16,7 @@ struct ContentView: View {
             NavigationView {
                 if hasLogin {
                     NavBar()
-                }  else {
+               }  else {
                     
                         test(){ i in
                             hasLogin = i
@@ -129,7 +129,7 @@ struct test: View {
                             self.registerAlert=true
                         }else {
                             self.userData.userId = self.userData.users.count
-                            self.userData.users.append(User(id: self.userData.users.count, number: "aaa", password: userRistrantionViewModel.password, role: 1, name: userRistrantionViewModel.name))
+                            self.userData.users.append(User(id: self.userData.users.count, number: "aaa", password: userRistrantionViewModel.password, role: 1, name: userRistrantionViewModel.name,progress:""))
                             
                             
                             let encoder = JSONEncoder()

@@ -21,7 +21,6 @@ struct IssuePageView : View {
     
     
     
-    
     var body : some View {
         VStack{
             HStack {
@@ -61,10 +60,28 @@ struct IssuePageView : View {
                     { WriteIssueView { titleText,content in
                 
                 self.userData.issues.insert(Issue(id: self.userData.issues.count, type: 1, title: titleText, content: content), at: 0)
+                
+                
+                let encoder = JSONEncoder()
+                do  {
+                    // 将player对象encod（编码）
+                    let data: Data = try encoder.encode(self.userData.issues)
+                    let filename = getDocumentsDirectory().appendingPathComponent("Issue.json")
+                    try? data.write(to: filename)
+                } catch {
+                    
+                }
+                
             }})
             
             Button(
-                action: { self.activityIssue = true }, label: {
+                action: {
+                    
+                    
+                 
+                    
+                    
+                    self.activityIssue = true }, label: {
                     VStack {
                         //Image(systemName: "plus.square")
                           //  .font(.system(size: 35))
@@ -85,6 +102,16 @@ struct IssuePageView : View {
                 
                 self.userData.issues.insert(Issue(id: self.userData.issues.count, type: 2, title: titleText,
             target:target,money:money,content: content), at: 0)
+                let encoder = JSONEncoder()
+                do  {
+                    // 将player对象encod（编码）
+                    let data: Data = try encoder.encode(self.userData.issues)
+                    let filename = getDocumentsDirectory().appendingPathComponent("Issue.json")
+                    try? data.write(to: filename)
+                } catch {
+                    
+                }
+                
             }})
             
         }
@@ -108,12 +135,14 @@ struct IssuePageView : View {
                         //.background(Color.gray.opacity(0.2))
                         .overlay(RoundedRectangle(cornerRadius:10).stroke(Color.gray, style: StrokeStyle(lineWidth: 1, dash: [10])))})
                 .sheet(isPresented: self.$searchPartyIssue,content:
-                        { PartyView { stuId,stuName in
+                        { PartyView()/* { stuId,stuName in
                     
                     
                     
                     self.userData.issues.insert(Issue(id: self.userData.issues.count, type: 3, stuId:stuId, stuName: stuName), at: 0)
-                }})
+                }*/
+                    
+                })
                 
                 Button(
                     action: { self.ihomeIssue = true }, label: {
@@ -136,6 +165,16 @@ struct IssuePageView : View {
                         { ihomeIssueView { titleText,department,content in
                     
                     self.userData.issues.insert(Issue(id: self.userData.issues.count, type: 4, title: titleText,department:department, content: content), at: 0)
+                    
+                    let encoder = JSONEncoder()
+                    do  {
+                        // 将player对象encod（编码）
+                        let data: Data = try encoder.encode(self.userData.issues)
+                        let filename = getDocumentsDirectory().appendingPathComponent("Issue.json")
+                        try? data.write(to: filename)
+                    } catch {
+                        
+                    }
                 }})
                 
             
@@ -178,26 +217,65 @@ struct ActivityView : View {
 }
 
 struct PartyView: View {
+    @EnvironmentObject var userData:UserData
     @Environment(\.presentationMode) var presentationMode
     
     @State var stuId=""
     @State var stuName=""
     
+    @State var nullAlert=false
     
-    let onIssueFinished: (String,String) -> Void
+    @State var result=""
+    
+    
+    //let onIssueFinished: (String,String) -> Void
     
     var body: some View {
         VStack {
             TextField("学号",text:self.$stuId)
             TextField("姓名",text:self.$stuName)
+            Text("入党进程：\(result)")
             
             Button(action: {
-                self.onIssueFinished(self.stuId,self.stuName)
-                self.presentationMode.wrappedValue.dismiss()}) {
+                let u = self.userData.users.filter{$0.name == self.stuName}
+                if(u.isEmpty){
+                    self.nullAlert=true
+                }else {
+                    let t = u.filter{$0.number == self.stuId}
+                    if(t.isEmpty){
+                        self.nullAlert=true
+                    }
+                    else {
+                        
+                        self.result=t[0].progress
+                        
+                    }
+                }
+                
+            }
+            
+            ) {
                     HStack {
                         Image(systemName: "magnifyingglass")
                             .font(.title)
                         Text("查询")
+                    }
+                }
+                .alert(isPresented: $nullAlert) {
+                    Alert(title: Text("查询失败"), message: Text("学号或姓名错误"))
+                }
+            
+            
+            Button(action: {
+                
+                self.presentationMode.wrappedValue.dismiss()}
+            
+            ) {
+                
+                    HStack {
+                        Image(systemName: "xmark")
+                            .font(.title)
+                        Text("返回")
                     }
                 }
             

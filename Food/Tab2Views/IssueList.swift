@@ -16,19 +16,16 @@ struct IssueList: View {
             
             ForEach(self.userData.issues) { issue in
                 NavigationLink(
-                    destination: IssueListItem(
+                    destination: IssueDetailView(
                         issue: issue
                     )
                 ) {
                 HStack {
                     IssueListItem(issue:issue)
-                    .padding()
-                    Spacer()
-
+                    .padding(10)
                     
+                    Spacer()
                 }.padding()
-                        
-               // }
                 }}
             
 
@@ -106,19 +103,74 @@ struct Issue4DetailView : View {
 struct IssueListItem : View {
     var issue:Issue
     var body: some View {
-        if (issue.type == 1) {
-            // typeName = "表达意见"
-            Text("表达意见")
-        } else if issue.type == 2 {
-            Text("申请活动")
-        } else if issue.type == 3 {
-            Text("入党进程")
-        } else {
-            Text("权益维护")
+        
+        HStack{
+            if (issue.type == 1) {
+                // typeName = "表达意见"
+                ZStack{
+                    RoundedRectangle(cornerRadius: 30)
+                        .frame(width:90,height: 30)
+                        .foregroundColor(.blue)
+                    
+                    Text("表达意见")
+                        .foregroundColor(.white)
+                        .bold()
+                        .background(Color.blue)
+                        .cornerRadius(20)
+                        .shadow(radius: 1)
+                }
+            } else if issue.type == 2 {
+                ZStack{
+                    RoundedRectangle(cornerRadius: 30)
+                        .frame(width:90,height: 30)
+                        .foregroundColor(.blue)
+                    
+                    Text("申请活动")
+                        .foregroundColor(.white)
+                        .bold()
+                        .background(Color.blue)
+                        .cornerRadius(20)
+                        .shadow(radius: 1)
+                }
+            } else if issue.type == 3 {
+                Text("入党进程")
+                    .background(Color.white)
+                        .cornerRadius(15)
+                        .shadow(radius: 1)
+            } else {
+                ZStack{
+                    RoundedRectangle(cornerRadius: 30)
+                        .frame(width:90,height: 30)
+                        .foregroundColor(.blue)
+                    
+                    Text("权益维护")
+                        .foregroundColor(.white)
+                        .bold()
+                        .background(Color.blue)
+                        .cornerRadius(20)
+                        .shadow(radius: 1)
+                }
+            }
+            
+            VStack {
+                HStack{Text("标题：\(issue.title)")
+                        .padding(10)
+                    Spacer()}
+                HStack{
+                    Text("内容：\(issue.content)")
+                        .padding(.leading,10)
+                        .padding(.bottom,10)
+                    Spacer()
+                }
+            }.background(Color.white)
+                .cornerRadius(15)
+                .shadow(radius: 1)
+                .frame(width: 200,height: 60)
+                .padding(.leading,10)
         }
         
-        Text(issue.title)
-        Text(issue.content)
+        
+        
     }
     
 }

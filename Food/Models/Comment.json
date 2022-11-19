@@ -1,7 +1,10 @@
 [
+    {"id": 0,"userId":7,"articleId":0,"content":"欢迎6系的新同学们！","commentImageName": "IMG_5484"},
 
-    {"id": 0,"userId":0,"articleId":0,"content":"青瓷火锅环境很好🍲！！！！","commentImageName": "c005_1"},
-    {"id": 1,"userId":1,"articleId":1,"content":"😍喜欢这里的自助小料和水果🍉🍉🍉🍉","commentImageName": "c005_1"}
+    {"id": 1,"userId":2,"articleId":0,"content":"欢迎学弟学妹加入6系大家庭！同时作为cpp和面向对象的助教，希望各位在OO的旅途中玩得愉快，收获满满！","commentImageName": "IMG_5480"},
+    {"id": 2,"userId":3,"articleId":0,"content":"作为《计算机组成原理》的助教，我十分欢迎各位学弟学妹加入计算机学院，从计组开始你的6系之旅！","commentImageName": "IMG_5479"},
+    {"id": 3, "userId":4, "articleId":0, "content":"期待和大家一起玩原神", "commentImageName":"IMG_5476"},
+    {"id": 4, "userId":6, "articleId":0, "content":"什么cpp 我要学os🥰", "commentImageName":"IMG_5482"}
 ]
 
 

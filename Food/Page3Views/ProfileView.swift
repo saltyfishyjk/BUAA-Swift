@@ -13,6 +13,46 @@ struct ProfileView: View {
     @State var hero1=false
     @State var hero2=false
    
+    func refresh(){
+        
+        let encoder = JSONEncoder()
+        do  {
+            // 将player对象encod（编码）
+            let data: Data = try encoder.encode(self.userData.issues)
+            let filename = getDocumentsDirectory().appendingPathComponent("Issue.json")
+            try? data.write(to: filename)
+        } catch {
+            
+        }
+    
+        do  {
+            // 将player对象encod（编码）
+            let data: Data = try encoder.encode(self.userData.comments)
+            let filename = getDocumentsDirectory().appendingPathComponent("Comment.json")
+            try? data.write(to: filename)
+        } catch {
+            
+        }
+  
+        do  {
+            // 将player对象encod（编码）
+            let data: Data = try encoder.encode(self.userData.users)
+            let filename = getDocumentsDirectory().appendingPathComponent("UserInfo.json")
+            try? data.write(to: filename)
+        } catch {
+            
+        }
+        
+        do  {
+            // 将player对象encod（编码）
+            let data: Data = try encoder.encode(self.userData.prefers)
+            let filename = getDocumentsDirectory().appendingPathComponent("Atricle.json")
+            try? data.write(to: filename)
+        } catch {
+            
+        }
+    }
+    
     
     var userName : String {
         self.userData.users.filter { $0.id == userData.userId }[0].name
@@ -20,18 +60,22 @@ struct ProfileView: View {
     
     var body: some View {
         VStack{
-            HStack {
-                Text("Hello," + userName)
-                    .bold()
-                    .font(.largeTitle)
-                    .multilineTextAlignment(.trailing)
-                    .foregroundColor(.blue)
-                    .padding(.leading, 20)
-                    .padding(.top, -40)
-                Spacer()
-            }
             
             ScrollView(.vertical, showsIndicators: false) {
+                HStack {
+                    Text("Hello," + userName)
+                        .bold()
+                        .font(.largeTitle)
+                        .multilineTextAlignment(.trailing)
+                        .foregroundColor(.blue)
+                        .padding(.leading, 20)
+                        .padding(.top, -40)
+                    
+                    //Button(action: {self.refresh()}) {
+                    //    Text("refresh")
+                  //  }
+                    Spacer()
+                }
                 //Text("hello,\(userName)!")
                 //    .zIndex(1.0)
                 //    .opacity((self.hero1 || self.hero2) ? 0 : 1)

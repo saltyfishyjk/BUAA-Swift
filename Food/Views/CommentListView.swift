@@ -27,16 +27,12 @@ struct CommentListView : View {
                         )
                     ) {
                         HStack {
-                            CommentListItem(comment:comment)
-                                .padding()
-                            Spacer()
-                            
-                            
-                        }.padding()
-                        
-                        // }
+                            CommentListItem(comment:comment).padding(.leading,15)
+                
+                        }
+
                     }}
-            }}
+            }.padding(20)}
             
 
        // }.frame(height: 400)
@@ -61,11 +57,17 @@ struct CommentListItem : View {
             picItem(comment:comment)
             VStack{
                 Text(userName)
+                    .foregroundColor(Color(red:72/255, green: 61/255, blue: 139/255))
                 Text(comment.content)
             }
             
             
         }
+            .frame(width: 300,height: 100)
+        .background(Color.white)
+            .cornerRadius(15)
+            .shadow(radius: 1)
+        
     }
     
 }
@@ -82,7 +84,7 @@ struct picItem: View {
                 .cornerRadius(5)
             
         }
-        .padding(.leading, 15)
+        .padding(.leading, 10)
         
     }
 }
