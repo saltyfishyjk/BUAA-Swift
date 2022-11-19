@@ -12,7 +12,7 @@ struct NavBar: View {
     //@EnvironmentObject var userData:UserData
     @State private var selection = 1
     init() {
-        UITabBar.appearance().backgroundColor = .white
+       // UITabBar.appearance().backgroundColor = .white
     }
     var body: some View {
         TabView(selection: $selection) {
@@ -33,7 +33,7 @@ struct NavBar: View {
                 
             }.tag(2)
             
-            Text("Profile").tabItem {
+            ProfileView().tabItem {
                 VStack {
                     Image(systemName: "person.fill")
                     Text("Profile")

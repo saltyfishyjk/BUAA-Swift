@@ -131,6 +131,17 @@ struct test: View {
                             self.userData.userId = self.userData.users.count
                             self.userData.users.append(User(id: self.userData.users.count, number: "aaa", password: userRistrantionViewModel.password, role: 1, name: userRistrantionViewModel.name))
                             
+                            
+                            let encoder = JSONEncoder()
+                            do  {
+                                // 将player对象encod（编码）
+                                let data: Data = try encoder.encode(self.userData.users)
+                                let filename = getDocumentsDirectory().appendingPathComponent("UserInfo.json")
+                                try? data.write(to: filename)
+                            } catch {
+                                
+                            }
+                            
                             onLoginFinished(true)
                             
                             

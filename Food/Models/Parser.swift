@@ -13,6 +13,7 @@ import SwiftUI
 let userInfoData: [User] = load("UserInfo.json")
 let commentData: [Comment] = load("Comment.json")
 let issueData: [Issue] = load("Issue.json")
+let preferData:[UserPreference] = load("Article.json")
 
 let ddd : Bool = initMyself()
 
@@ -44,15 +45,23 @@ func loadImageInToCache(str:String, uploadImg:UIImage){
 
 func initMyself() -> Bool{
     print("init sucess")
+    let sanboxfilename = getDocumentsDirectory().appendingPathComponent("Comment.json")
 
     
-    for s in commentData {
-            let imageNameStd = s.commentImageName
-            
-            let path = Bundle.main.path(forResource: imageNameStd, ofType: "jpg")
-            let newImage = UIImage(contentsOfFile: path!)!
-            loadImageInToCache(str: imageNameStd, uploadImg: newImage)
+    if !FileManager.default.fileExists(atPath: sanboxfilename.path) {
+        for s in commentData {
+                let imageNameStd = s.commentImageName
+                
+                let path = Bundle.main.path(forResource: imageNameStd, ofType: "jpg")
+                let newImage = UIImage(contentsOfFile: path!)!
+                loadImageInToCache(str: imageNameStd, uploadImg: newImage)
+        }
     }
+    
+    
+    
+    print("init sucess")
+
     
     
     return true
@@ -61,6 +70,7 @@ func initMyself() -> Bool{
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
     
+    /*
     guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
      else {
          fatalError("Couldn't find \(filename) in main bundle.")
@@ -69,9 +79,9 @@ func load<T: Decodable>(_ filename: String) -> T {
         data = try Data(contentsOf: file)
     } catch {
         fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
-    }
+    }*/
     
-    /*
+    
     
     let sanboxfilename = getDocumentsDirectory().appendingPathComponent(filename)
 
@@ -88,7 +98,7 @@ func load<T: Decodable>(_ filename: String) -> T {
         } catch {
             fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
         }
-    }*/
+    }
   
 
     

@@ -16,27 +16,30 @@ struct CommentListView : View {
     
     var body: some View{
         
-        List {
-            
-            ForEach(self.userData.comments.filter {$0.articleId == card.id} ) { comment in
-                NavigationLink(
-                    destination: CommentView(
-                        comment: comment
-                    )
-                ) {
-                HStack {
-                    CommentListItem(comment:comment)
-                    .padding()
-                    Spacer()
-
-                    
-                }.padding()
+        //List {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(alignment: .top, spacing: 0) {
+                
+                ForEach(self.userData.comments.filter {$0.articleId == card.id} ) { comment in
+                    NavigationLink(
+                        destination: CommentView(
+                            comment: comment
+                        )
+                    ) {
+                        HStack {
+                            CommentListItem(comment:comment)
+                                .padding()
+                            Spacer()
+                            
+                            
+                        }.padding()
                         
-               // }
-                }}
+                        // }
+                    }}
+            }}
             
 
-        }.frame(height: 400)
+       // }.frame(height: 400)
         
         
         
@@ -60,6 +63,8 @@ struct CommentListItem : View {
                 Text(userName)
                 Text(comment.content)
             }
+            
+            
         }
     }
     
@@ -73,7 +78,7 @@ struct picItem: View {
             comment.commentImage
                 .renderingMode(.original)
                 .resizable()
-                .frame(width: 185, height: 155)
+                .frame(width: 55, height: 55)
                 .cornerRadius(5)
             
         }

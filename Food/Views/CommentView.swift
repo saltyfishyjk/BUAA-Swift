@@ -22,7 +22,7 @@ struct CommentView: View {
             ZStack {
                 comment.commentImage
                     .resizable()
-                    .frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height)
+                    .frame(width: UIScreen.main.bounds.width , height: 80)
                     .cornerRadius( 5 )
                     .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                     .zIndex(5.0)

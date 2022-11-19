@@ -20,6 +20,7 @@ struct Article : Identifiable {
     var context : String // 正文
     var type : String // 文章类别，有Party(党政), Teacher(师生), Activity(学院活动)三种
     var commets : [Comment] = [] // 文章评论，初始时没有评论
+    
 }
 
 var articleData = [

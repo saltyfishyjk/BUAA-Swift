@@ -17,6 +17,7 @@ struct Comment:Hashable, Codable, Identifiable {
     var content:String // 评论正文内容
     var commentImageName:String // 评论所附图片
     
+    
     init(id: Int, userId:Int, articleId: Int, content: String, commentImageName: String) {
         self.userId = userId
         self.id = id

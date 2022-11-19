@@ -85,20 +85,7 @@ struct HomeView: View {
                                     )
                             }
                         }
-                        
-                        /*HStack(spacing: 10) {
-                            ForEach(3 ..< 7) { i in
-                                VStack {
-                                    Image("categ-\(String(i))")
-                                    Text(FoodTypes[Int(i)-1])
-                                        .font(.subheadline)
-                                        .bold()
-                                }
-                                .frame(width: 80, height: 100, alignment: .center)
-                                .background(Color.white)
-                                .cornerRadius(15)
-                            }
-                        }*/
+         
                         
                     }
                     .shadow(radius: 1)
@@ -135,26 +122,10 @@ struct HomeView: View {
                                                 if !self.data[i].isStared{
                                                     self.hero.toggle()
                                                     self.data[i].isStared.toggle()
-                                                }
-                                            }
-                                            
-                                        }
-                                    
-                                }
-                                // going to increase height based on expand...
+                                                } }}}
                                 .frame(height: self.data[i].isStared ? UIScreen.main.bounds.height : 250)
-                                /*.simultaneousGesture(DragGesture(minimumDistance: self.data[i].isStared ? 0 : 800).onChanged({ (_) in
-                                    
-                                    print("dragging")
-                                })
-                                
-                                )*/
                             }
-                            
-                            
-                        }
-                        
-                    }.padding(.top, 50)
+                        }  }.padding(.top, 50)
                     .padding(.bottom, 150)
                     
                     Spacer()

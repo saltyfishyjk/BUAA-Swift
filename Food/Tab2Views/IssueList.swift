@@ -40,18 +40,72 @@ struct IssueList: View {
 struct IssueDetailView : View {
     var issue:Issue
     var body: some View {
-        Text("this is detail")
+        if(issue.type==1){
+            Issue1DetailView(issue: issue)
+        } else if(issue.type==2){
+            Issue2DetailView(issue: issue)
+        } else if(issue.type==3){
+            Issue3DetailView(issue: issue)
+        } else {
+            Issue4DetailView(issue: issue)
+        }
+        
+    }
+}
+
+struct Issue1DetailView : View {
+    var issue:Issue
+    var body: some View {
+        Text("对学生会所提意见")
         Text(issue.title)
         Text(issue.content)
+
     }
-    
-    
+}
+
+struct Issue2DetailView : View {
+    var issue:Issue
+    var body: some View {
+        Text("发起活动申请")
+        Text(issue.title)
+        Text(issue.target)
+        Text("\(issue.money)")
+        Text(issue.content)
+        
+        
+        
+    }
+}
+
+struct Issue3DetailView : View {
+    var issue:Issue
+    var body: some View {
+        Text("输入姓名和学号查询入党进程")
+        
+        
+        
+        
+    }
+}
+
+struct Issue4DetailView : View {
+    var issue:Issue
+    var body: some View {
+        Text("提交权益申诉")
+        Text(issue.title)
+        Text(issue.department)
+        Text(issue.content)
+        
+        
+        
+    }
 }
 
 
 struct IssueListItem : View {
     var issue:Issue
     var body: some View {
+        Text("type:\(issue.type)")
         Text(issue.title)
         Text(issue.content)
     }

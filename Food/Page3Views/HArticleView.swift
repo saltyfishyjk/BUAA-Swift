@@ -1,14 +1,102 @@
 //
-//  OurPicks.swift
-//  SCSESU
+//  HArticleView.swift
+//  Food
 //
-//  Created by YJK on 2022/11/16.
+//  Created by jinshenghao on 2022/11/18.
 //
 
+import Foundation
 import SwiftUI
+struct HArticleListView: View {
+    @EnvironmentObject var userData:UserData
+    @State var hero = false
+    @State var data:[Article]
+    
+    let onCommentFinished: (Bool) -> Void
+    
+    var body: some View {
+        
+            VStack(spacing: 100) {
+                ForEach(0..<self.data.count){i in
+                    GeometryReader{g in
+                        HOurPicks(card: self.$data[i], hero: self.$hero){ ttt in
+                            onCommentFinished(self.hero)
+                        }
+                        
+                            .offset(y: self.data[i].isStared ? -g.frame(in: .global).minY : 0)
+                            .opacity(self.hero ? (self.data[i].isStared ? 1 : 0) : 1)
+                            .onTapGesture {
+                                
+                                withAnimation(.interactiveSpring(response: 0.5, dampingFraction: 0.8, blendDuration: 0)){
+                                    if !self.data[i].isStared{
+                                        self.hero.toggle()
+                                        self.data[i].isStared.toggle()
+                                        onCommentFinished(self.hero)
+                                    }
+                                }
+                                
+                            }
+                        
+                    }
+                    // going to increase height based on expand...
+                    .frame(height: self.data[i].isStared ? UIScreen.main.bounds.height : 250)
+                  
+                }
+            
+            
+        }
+        
+   }
 
-// 精选内容页
-struct OurPicks: View {
+    
+
+}
+struct HArticleListView2: View {
+    @EnvironmentObject var userData:UserData
+    @State var hero = false
+    @State var data:[Article]
+    
+    let onCommentFinished: (Bool) -> Void
+    
+    var body: some View {
+        
+            VStack(spacing: 100) {
+                ForEach(0..<self.data.count){i in
+                    GeometryReader{g in
+                        HOurPicks(card: self.$data[i], hero: self.$hero){ ttt in
+                            onCommentFinished(self.hero)
+                        }
+                        
+                            .offset(y: self.data[i].isStared ? -g.frame(in: .global).minY : 0)
+                            .opacity(self.hero ? (self.data[i].isStared ? 1 : 0) : 1)
+                            .onTapGesture {
+                                
+                                withAnimation(.interactiveSpring(response: 0.5, dampingFraction: 0.8, blendDuration: 0)){
+                                    if !self.data[i].isStared{
+                                        self.hero.toggle()
+                                        self.data[i].isStared.toggle()
+                                        onCommentFinished(self.hero)
+                                    }
+                                }
+                                
+                            }
+                        
+                    }
+                    // going to increase height based on expand...
+                    .frame(height: self.data[i].isStared ? UIScreen.main.bounds.height : 250)
+                   
+                
+                }.padding(.top,20)
+            
+        }
+        
+   }
+
+    
+
+}
+
+struct HOurPicks: View {
     @EnvironmentObject var userData:UserData
     @Binding var card : Article
     //var card : Article
@@ -16,6 +104,8 @@ struct OurPicks: View {
     @State var heart = "heart.fill"
     
     @State var commentSheet = false
+    
+    let onCommentFinished: (Bool) -> Void
     
     var body: some View {
         VStack {
@@ -81,6 +171,7 @@ struct OurPicks: View {
                                     
                                     self.card.isStared.toggle()
                                     self.hero.toggle()
+                                    onCommentFinished(self.hero)
                                 }
                                 
                             },label:{
@@ -246,250 +337,3 @@ struct OurPicks: View {
             }
     }
 }
-
-struct WriteCommentView: View {
-    @Environment(\.presentationMode) var presentationMode
-    
-    @EnvironmentObject var userData:UserData
-    
-    @State var card:Article
-    
-    //@State var titleText=""
-    @State var content=""
-    @State var secondSheet=false
-    @State var getImage = [Image]()
-    
-    @State var showAlert=false
-    
-    @State var getUIImage=[UIImage]()
-    @State var y=0
-    
-    @State var releaseAlert = false
-    
-    let onCommentFinished: (String) -> Void
-    
-    func loadImageInToCache(str:String, uploadImg:UIImage){
-        let filename = getDocumentsDirectory().appendingPathComponent(str+".jpg")
-        if let data = uploadImg.jpegData(compressionQuality: 0.8) {
-            try? data.write(to: filename)
-        }
-        print("\(filename) has loaded")
-    }
-    
-    func upload(){
-        let imgName="comment\(self.userData.comments.count)"
-        loadImageInToCache(str: imgName, uploadImg: getUIImage[0])
-        let t=Comment(id: self.userData.comments.count, userId: self.userData.userId, articleId: card.id, content: self.content, commentImageName: imgName)
-        
-        
-        self.userData.comments.append(t)
-        
-        let encoder = JSONEncoder()
-        do  {
-            // 将player对象encod（编码）
-            let data: Data = try encoder.encode(self.userData.comments)
-            let filename = getDocumentsDirectory().appendingPathComponent("Comment.json")
-            try? data.write(to: filename)
-        } catch {
-            
-        }
-        
-        self.onCommentFinished(self.content)
-        self.presentationMode.wrappedValue.dismiss()
-        
-    
-    }
-    
-    var body: some View {
-        VStack {
-            //TextField("标题",text:self.$titleText)
-            
-            
-            Button(action: {
-                
-                
-                    self.releaseAlert=true
-                
-                
-            },
-                   
-                   label: {Text("提交")})
-            .alert(isPresented: self.$releaseAlert) {
-                
-                if(!self.getImage.isEmpty){
-                    return Alert(
-                        title: Text("确定发布？"),
-                        
-                        primaryButton: .default(
-                            Text("继续编辑")
-                            //action: saveWorkoutData
-                        ),
-                        secondaryButton: .destructive(
-                            Text("立即发布"),
-                            action: {
-                                self.upload()
-                                
-                                
-                            }
-                        )
-                    )}
-                else {
-                   return Alert(
-                        title: Text("图片不能为空"),
-                        
-                        message: Text("请添加图片")
-                    )
-                    
-                }
-                
-                
-                
-                
-                     }
-                    
-            
-            
-            
-            TextField("评论",text:self.$content)
-                .padding(20)
-            
-            VStack{
-                Divider().foregroundColor(Color.gray.opacity(0.5)).padding(5)
-                HStack{
-                    Image(systemName: "camera")
-                        .font(.system(size: 25))
-                        .foregroundColor(Color.gray.opacity(0.85))
-                        .padding(10)
-                    Text("图片")
-                        .foregroundColor(Color.gray.opacity(0.85))
-                        .font(.system(size: 20))
-                    Spacer()}
-                
-                HStack{
-                Button(
-                    action: { self.secondSheet = true }, label: {
-                        VStack {
-                            Image(systemName: "photo.fill.on.rectangle.fill")
-                                .font(.system(size: 35))
-                                .foregroundColor(Color.gray.opacity(0.85)).padding(10)
-                            Text("点击上传图片")
-                                .foregroundColor(Color.gray.opacity(0.85))
-                                .font(.system(size: 17))}
-                                .frame(width: 130, height: 130)
-                                .background(Color.gray.opacity(0.2))
-                                .overlay(RoundedRectangle(cornerRadius:10).stroke(Color.gray, style: StrokeStyle(lineWidth: 1, dash: [10])))})
-                    ScrollView(.horizontal, showsIndicators: true) {
-                        HStack(alignment: .top, spacing: 0) {
-                            
-                            ForEach(0..<getImage.count,id:\.self) { index in
-                                
-                                self.getImage[index]
-                                
-                                    .renderingMode(.original)
-                                    .resizable()
-                                    .frame(width: 130, height: 130)
-                                    .cornerRadius(5)
-                                    .padding(5)
-                                
-                                    .onTapGesture {
-                                        self.showAlert=true
-                                        self.y=index
-                                        
-                                    }.alert(isPresented: self.$showAlert) {
-                                        Alert(
-                                            title: Text("删除此照片？"),
-                                            
-                                            primaryButton: .default(
-                                                Text("取消")
-                                                //action: saveWorkoutData
-                                            ),
-                                            secondaryButton: .destructive(
-                                                Text("删除"),
-                                                action: {
-                                                    
-                                                    
-                                                    self.getImage.remove(at: self.y)
-                                                    self.getUIImage.remove(at: self.y)
-                                                    
-                                                }
-                                            )
-                                        )
-                                    }
-                                
-                                
-                                
-                            }}}
-                    .frame(height: 145)
-                    .sheet(isPresented: self.$secondSheet,content:
-                                { ImagePicker(sourceType: .photoLibrary) { image in
-                        if(self.getImage.isEmpty){
-                            self.getImage.append(Image(uiImage: image))
-                            self.getUIImage.append(image)
-                        }else {
-                            self.getUIImage[0]=image
-                            self.getImage[0]=(Image(uiImage: image))}}})}}
-            
-        
-                
-            Spacer()
-        }.edgesIgnoringSafeArea(.all)
-    }
-}
-
-
-
-struct ImagePicker: UIViewControllerRepresentable {
-    @Environment(\.presentationMode) private var presentationMode
-    let sourceType: UIImagePickerController.SourceType
-    let onImagePicked: (UIImage) -> Void
- 
-    final class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
- 
-        @Binding private var presentationMode: PresentationMode
-        private let sourceType: UIImagePickerController.SourceType
-        private let onImagePicked: (UIImage) -> Void
- 
-        init(presentationMode: Binding<PresentationMode>,
-             sourceType: UIImagePickerController.SourceType,
-             onImagePicked: @escaping (UIImage) -> Void) {
-            _presentationMode = presentationMode
-            self.sourceType = sourceType
-            self.onImagePicked = onImagePicked
-        }
- 
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            let uiImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-            onImagePicked(uiImage)
-            presentationMode.dismiss()
-        }
- 
-        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-            presentationMode.dismiss()
-        }
- 
-    }
- 
-    func makeCoordinator() -> Coordinator {
-        return Coordinator(presentationMode: presentationMode,
-                           sourceType: sourceType,
-                           onImagePicked: onImagePicked)
-    }
- 
-    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
-        let picker = UIImagePickerController()
-        picker.sourceType = sourceType
-        picker.delegate = context.coordinator
-        return picker
-    }
- 
-    func updateUIViewController(_ uiViewController: UIImagePickerController,
-                                context: UIViewControllerRepresentableContext<ImagePicker>) {
-    }
-}
-/*
- struct OurPicks_Previews: PreviewProvider {
- static var previews: some View {
- OurPicks(card:.constant(articleData[0]), hero:.constant(false))
- }
- }
- */
