@@ -13,7 +13,7 @@ struct ArtivleView: View {
     @State private var quantity = 0
     @State var article : Article
     @State var heart = "heart.fill"
-    var placeHolder = "Nine years earlier, Lorem ipsum dolor sit amet,Morbi sed purus nulla. Curabitur dapibus ultrices lorem vitae tincidunt. Pellentesque quis arcu sit amet urna commodo porttitor. Aenean sit "
+    
     var body: some View {
         VStack {
             ScrollView(.vertical, showsIndicators: false, content: {
@@ -50,58 +50,15 @@ struct ArtivleView: View {
                             .foregroundColor(.gray)
                             .padding(.top,5)
                         Spacer()
-                        
-                        Button(action: {
-                            withAnimation(.spring(dampingFraction: 0.5)) {
-                                if(heart == "heart.fill") {heart = "heart"}
-                                else {heart="heart.fill"}
-                            }
-                        }, label: {
-                            Image(systemName: heart)
-                                .font(.largeTitle)
-                                .foregroundColor(.red)
-                            
-                        })
-                        .padding(.all, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                     }
                     
                     
-                    Text("Description")
+                    Text("正文")
                         .font(.system(size: 25, weight: .bold))
                     
                     Text(article.context)
                         .padding(.top, 10)
                         .fixedSize(horizontal: false, vertical: true)
-                    
-                    
-                    HStack {
-                        Text("Quantity ")
-                            .font(.title3)
-                            .bold()
-                        Spacer()
-                        Stepper("",
-                                onIncrement: {
-                                    quantity+=3
-                                }, onDecrement: {
-                                    quantity-=3
-                                })
-                            .foregroundColor(.black)
-                            .background(Color.white)
-                            .frame(width: 100)
-                    }.padding(.top, 10)
-                    
-                    /*
-                    HStack {
-                        Text("Price ")
-                            .font(.title3)
-                            .bold()
-                        Spacer()
-                        Text("$\(quantity+1).00")
-                            .font(.title2)
-                            .bold()
-                    }
-                    .padding(.top, 10)
-                     */
                 }
                 .padding(.top, 25)
                 .padding(.horizontal)
@@ -109,28 +66,7 @@ struct ArtivleView: View {
                 .cornerRadius(20)
                 .offset(y: -35)
             })
-            
-            
             Spacer()
-            
-            HStack{
-                Spacer()
-                Button(action: {}, label: {
-                    Text("添加到收藏")
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .padding(.vertical, 10)
-                        .padding(.horizontal, 100)
-                        .background(Color.red)
-                        .cornerRadius(10)
-                    
-                })
-                Spacer()
-            }
-            .padding(.all, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-            
-            .edgesIgnoringSafeArea(.all)
-            .background(Color.white.edgesIgnoringSafeArea(.all))
         }
     }
     
