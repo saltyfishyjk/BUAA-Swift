@@ -59,7 +59,7 @@ struct HomeView: View {
                     //Categories
                     VStack{
                         HStack {
-                            Text("Categories")
+                            Text("分类")
                                 .bold()
                                 .multilineTextAlignment(.trailing)
                                 .padding(.leading, 20)
@@ -67,24 +67,29 @@ struct HomeView: View {
                             Spacer()
                         }
                         // Categories View
-                        HStack(spacing: 10) {
-                            ForEach(1 ..< 4) { i in
-                                NavigationLink(
-                                    destination: ArticleListView(data: data.filter{ $0.type == articleTypes[Int(i)-1] }),
-                                    label: {
-                                        VStack {
-                                            Image("categ-\(String(i))")
-                                            Text(articleTypes[Int(i)-1])
-                                                .font(.subheadline)
-                                                .bold()
-                                        }
-                                        .frame(width: 80, height: 100, alignment: .center)
-                                        .background(Color.white)
-                                        .cornerRadius(15)
-                                    }
-                                    )
+                        //ScrollView(.horizontal, showsIndicators: false) {
+                            HStack {
+                                ForEach(1 ..< 4) { i in
+                                    NavigationLink(
+                                        destination: ArticleListView(data: data.filter{ $0.type == articleTypes[Int(i)-1] }),
+                                        label: {
+                                            VStack {
+                                                Image("categ-\(String(i))")
+                                                Text(articleTypes[Int(i)-1])
+                                                    .font(.subheadline)
+                                                    .bold()
+                                            }
+                                            .frame(minWidth:0, maxWidth:.infinity, minHeight: 100)
+                                            //.frame(width: 80, height: 100, alignment: .center, minWidth:0, maxWidth:.infinity)
+                                            .background(Color.white)
+                                            .cornerRadius(15)
+                                        })
+                                }
+                                .padding(.horizontal)
+                                //.padding(.bottom, 10)
+                                //.padding(.leading, 30)
                             }
-                        }
+                        //}
          
                         
                     }
@@ -161,7 +166,7 @@ struct SearchBar: View {
             
             VStack {
                 HStack {
-                    Text("院会首页")
+                    Text("欢迎来到计算机学院学生会")
                         .bold()
                         .font(.title)
                         .multilineTextAlignment(.trailing)

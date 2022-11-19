@@ -36,7 +36,7 @@ struct NavBar: View {
             ProfileView().tabItem {
                 VStack {
                     Image(systemName: "person.fill")
-                    Text("Profile")
+                    Text("Me")
                 }
                 
             }.tag(3)
