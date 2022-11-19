@@ -102,10 +102,21 @@ struct Issue4DetailView : View {
 }
 
 
+
 struct IssueListItem : View {
     var issue:Issue
     var body: some View {
-        Text("type:\(issue.type)")
+        if (issue.type == 1) {
+            // typeName = "表达意见"
+            Text("表达意见")
+        } else if issue.type == 2 {
+            Text("申请活动")
+        } else if issue.type == 3 {
+            Text("入党进程")
+        } else {
+            Text("权益维护")
+        }
+        
         Text(issue.title)
         Text(issue.content)
     }

@@ -24,6 +24,21 @@ struct IssuePageView : View {
     
     var body : some View {
         VStack{
+            HStack {
+                Image("party")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 80)
+                    .clipped()
+                Text("院会快捷服务")
+                    .bold()
+                    .font(.title)
+                    .multilineTextAlignment(.trailing)
+                    .foregroundColor(.red)
+                    .padding(.leading, 20)
+                    .padding(.top, -40)
+                Spacer()
+            }
             HStack{
             Button(
                 action: { self.showWriteIssue = true }, label: {
@@ -150,8 +165,13 @@ struct ActivityView : View {
             
             Button(action: {
                 self.onIssueFinished(self.titleText,self.target,self.money,self.content)
-                self.presentationMode.wrappedValue.dismiss()},
-                   label: {Text("提交")})
+                self.presentationMode.wrappedValue.dismiss()}) {
+                    HStack {
+                        Image(systemName: "paperplane")
+                            .font(.title)
+                        Text("提交")
+                    }
+                }
             
         }.edgesIgnoringSafeArea(.all)
     }
@@ -173,8 +193,13 @@ struct PartyView: View {
             
             Button(action: {
                 self.onIssueFinished(self.stuId,self.stuName)
-                self.presentationMode.wrappedValue.dismiss()},
-                   label: {Text("提交")})
+                self.presentationMode.wrappedValue.dismiss()}) {
+                    HStack {
+                        Image(systemName: "magnifyingglass")
+                            .font(.title)
+                        Text("查询")
+                    }
+                }
             
         }.edgesIgnoringSafeArea(.all)
     }
@@ -198,8 +223,14 @@ struct ihomeIssueView: View {
             
             Button(action: {
                 self.onIssueFinished(self.titleText,self.department,self.content)
-                self.presentationMode.wrappedValue.dismiss()},
-                   label: {Text("提交")})
+                self.presentationMode.wrappedValue.dismiss()}) {
+                    HStack {
+                        Image(systemName: "paperplane")
+                            .font(.title)
+                        Text("提交")
+                    }
+                }
+
             
         }.edgesIgnoringSafeArea(.all)
     }
@@ -221,15 +252,14 @@ struct WriteIssueView: View {
             
             Button(action: {
                 self.onIssueFinished(self.titleText,self.content)
-                self.presentationMode.wrappedValue.dismiss()},
-                   label: {Text("提交")})
+                self.presentationMode.wrappedValue.dismiss()}) {
+                    HStack {
+                        Image(systemName: "paperplane")
+                            .font(.title)
+                        Text("提交")
+                    }
+                }
             
         }.edgesIgnoringSafeArea(.all)
-    }
-}
-
-struct IssuePageView_Previews:PreviewProvider {
-    static var previews: some View {
-        IssuePageView()
     }
 }
