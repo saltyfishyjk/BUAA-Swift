@@ -11,7 +11,7 @@ import UIKit
 
 
 
-struct IssusPageView : View {
+struct IssuePageView : View {
     @EnvironmentObject var userData:UserData
     
     @State var showWriteIssue=false
@@ -28,14 +28,19 @@ struct IssusPageView : View {
             Button(
                 action: { self.showWriteIssue = true }, label: {
                     VStack {
-                        Image(systemName: "plus.square")
-                            .font(.system(size: 35))
-                            .foregroundColor(Color.gray.opacity(0.85)).padding(10)
-                        Text("点击上传意见")
-                            .foregroundColor(Color.gray.opacity(0.85))
+                        //Image(systemName: "plus.square")
+                        //   .font(.system(size: 35))
+                        //    .foregroundColor(Color.gray.opacity(0.85)).padding(10)
+                        Image("scse")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 80)
+                            .clipped()
+                        Text("表达意见")
+                            .foregroundColor(Color.black.opacity(0.85))
                         .font(.system(size: 17))}
                     .frame(width: 130, height: 130)
-                    .background(Color.gray.opacity(0.2))
+                    //.background(Color.gray.opacity(0.2))
                     .overlay(RoundedRectangle(cornerRadius:10).stroke(Color.gray, style: StrokeStyle(lineWidth: 1, dash: [10])))})
             .sheet(isPresented: self.$showWriteIssue,content:
                     { WriteIssueView { titleText,content in
@@ -46,14 +51,19 @@ struct IssusPageView : View {
             Button(
                 action: { self.activityIssue = true }, label: {
                     VStack {
-                        Image(systemName: "plus.square")
-                            .font(.system(size: 35))
-                            .foregroundColor(Color.gray.opacity(0.85)).padding(10)
-                        Text("发起活动申请")
-                            .foregroundColor(Color.gray.opacity(0.85))
+                        //Image(systemName: "plus.square")
+                          //  .font(.system(size: 35))
+                          //  .foregroundColor(Color.gray.opacity(0.85)).padding(10)
+                        Image("activity")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 90)
+                            .clipped()
+                        Text("申请活动")
+                            .foregroundColor(Color.blue.opacity(0.85))
                         .font(.system(size: 17))}
                     .frame(width: 130, height: 130)
-                    .background(Color.gray.opacity(0.2))
+                    //.background(Color.blue.opacity(0.2))
                     .overlay(RoundedRectangle(cornerRadius:10).stroke(Color.gray, style: StrokeStyle(lineWidth: 1, dash: [10])))})
             .sheet(isPresented: self.$activityIssue,content:
                     { ActivityView { titleText,target,money,content in
@@ -68,14 +78,19 @@ struct IssusPageView : View {
                 Button(
                     action: { self.searchPartyIssue = true }, label: {
                         VStack {
-                            Image(systemName: "plus.square")
-                                .font(.system(size: 35))
-                                .foregroundColor(Color.gray.opacity(0.85)).padding(10)
-                            Text("点击查询党建")
-                                .foregroundColor(Color.gray.opacity(0.85))
+                            //Image(systemName: "plus.square")
+                            //    .font(.system(size: 35))
+                            //    .foregroundColor(Color.gray.opacity(0.85)).padding(10)
+                            Image("party")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 70)
+                                .clipped()
+                            Text("入党进程")
+                                .foregroundColor(Color.red.opacity(0.85))
                             .font(.system(size: 17))}
                         .frame(width: 130, height: 130)
-                        .background(Color.gray.opacity(0.2))
+                        //.background(Color.gray.opacity(0.2))
                         .overlay(RoundedRectangle(cornerRadius:10).stroke(Color.gray, style: StrokeStyle(lineWidth: 1, dash: [10])))})
                 .sheet(isPresented: self.$searchPartyIssue,content:
                         { PartyView { stuId,stuName in
@@ -88,14 +103,19 @@ struct IssusPageView : View {
                 Button(
                     action: { self.ihomeIssue = true }, label: {
                         VStack {
-                            Image(systemName: "plus.square")
-                                .font(.system(size: 35))
-                                .foregroundColor(Color.gray.opacity(0.85)).padding(10)
-                            Text("申请权益维护")
-                                .foregroundColor(Color.gray.opacity(0.85))
+                            //Image(systemName: "plus.square")
+                            //    .font(.system(size: 35))
+                            //    .foregroundColor(Color.gray.opacity(0.85)).padding(10)
+                            Image("shield")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 90)
+                                .clipped()
+                            Text("权益维护")
+                                .foregroundColor(Color.yellow.opacity(0.85))
                             .font(.system(size: 17))}
                         .frame(width: 130, height: 130)
-                        .background(Color.gray.opacity(0.2))
+                        //.background(Color.gray.opacity(0.2))
                         .overlay(RoundedRectangle(cornerRadius:10).stroke(Color.gray, style: StrokeStyle(lineWidth: 1, dash: [10])))})
                 .sheet(isPresented: self.$ihomeIssue,content:
                         { ihomeIssueView { titleText,department,content in
@@ -205,5 +225,11 @@ struct WriteIssueView: View {
                    label: {Text("提交")})
             
         }.edgesIgnoringSafeArea(.all)
+    }
+}
+
+struct IssuePageView_Previews:PreviewProvider {
+    static var previews: some View {
+        IssuePageView()
     }
 }

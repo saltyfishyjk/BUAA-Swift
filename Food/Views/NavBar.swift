@@ -25,7 +25,7 @@ struct NavBar: View {
             }.tag(1)
             
             //MessagesView().tabItem {
-            IssusPageView().tabItem {
+            IssuePageView().tabItem {
                 VStack {
                     Image(systemName: "envelope.fill")
                     Text("Message")
