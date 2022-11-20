@@ -2,8 +2,6 @@
 //  UserData.swift
 //  BUAASCSE
 //
-//  Created by YJK on 2022/11/16.
-//
 
 import Foundation
 import Combine

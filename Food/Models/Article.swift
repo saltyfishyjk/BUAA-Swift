@@ -1,8 +1,7 @@
 //
 //  Card.swift
-//  SCSESU
+//  BUAASCSE
 //
-//  Created by YJK on 11/12/22.
 
 // 首页新闻滚播图
 

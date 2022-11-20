@@ -1,8 +1,6 @@
 //
 //  IssuePageView.swift
-//  Food
-//
-//  Created by jinshenghao on 2022/11/16.
+//  BUAASCSE
 //
 
 import Foundation

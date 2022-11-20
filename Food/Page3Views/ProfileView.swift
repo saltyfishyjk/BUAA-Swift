@@ -1,8 +1,7 @@
 //
 //  ProfileView.swift
-//  Food
+//  BUAASCSE
 //
-//  Created by jinshenghao on 2022/11/18.
 //
 
 import Foundation
@@ -70,18 +69,8 @@ struct ProfileView: View {
                         .foregroundColor(.blue)
                         .padding(.leading, 20)
                         .padding(.top, -40)
-                    
-                    //Button(action: {self.refresh()}) {
-                    //    Text("refresh")
-                  //  }
                     Spacer()
                 }
-                //Text("hello,\(userName)!")
-                //    .zIndex(1.0)
-                //    .opacity((self.hero1 || self.hero2) ? 0 : 1)
-                // Text("点赞的文章")
-                //    .zIndex(1.0)
-                    // .opacity((self.hero1 || self.hero2) ? 0 : 1)
                 HStack {
                     Image(systemName: "heart.fill")
                         .foregroundColor(.red)
@@ -102,13 +91,6 @@ struct ProfileView: View {
                     
                 } .opacity((self.hero2) ? 0 : 1)
                     .zIndex(5.0)
-                
-               /*
-                Text("收藏")
-                    .opacity((self.hero1 || self.hero2) ? 0 : 1)
-                    .zIndex(1.0)
-                    .padding(.top,80)
-                */
                 
                 HStack {
                     Image(systemName: "star.fill")
@@ -133,28 +115,8 @@ struct ProfileView: View {
                     
                        .zIndex(5.0)
                 
-                
             }
             
         }
     }
 }
-
-/*
-struct UserStaredView: View {
-    @EnvironmentObject var userData: UserData
-    var body: some View {
-        HArticleListView(data: self.userData.articles.filter { self.userData.prefers[$0.id].staredUserId.contains(self.userData.userId) } )
-        
-    }
-}
-
-struct UserLikedView: View {
-    @EnvironmentObject var userData: UserData
-    var body: some View {
-        HArticleListView(data: self.userData.articles.filter { self.userData.prefers[$0.id].likedUserId.contains(self.userData.userId) } )
-        
-    }
-*/
-
-

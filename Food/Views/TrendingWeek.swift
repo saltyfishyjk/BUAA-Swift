@@ -1,8 +1,6 @@
 //
 //  TrendingWeek.swift
-//  Food
-//
-//  Created by BqNqNNN on 7/12/20.
+//  BUAASCSE
 //
 
 import SwiftUI

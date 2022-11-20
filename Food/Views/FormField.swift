@@ -1,8 +1,6 @@
 //
 //  FormField.swift
-//  SCSESU
-//
-//  Created by YJK on 2022/11/12.
+//  BUAASCSE
 //
 
 import SwiftUI

@@ -1,8 +1,6 @@
 //
 //  OurPicks.swift
-//  SCSESU
-//
-//  Created by YJK on 2022/11/16.
+//  BUAASCSE
 //
 
 import SwiftUI

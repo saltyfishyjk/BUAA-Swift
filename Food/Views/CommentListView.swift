@@ -1,8 +1,6 @@
 //
 //  CommentListView.swift
-//  Food
-//
-//  Created by jinshenghao on 2022/11/18.
+//  BUAASCSE
 //
 
 import Foundation
@@ -28,18 +26,9 @@ struct CommentListView : View {
                     ) {
                         HStack {
                             CommentListItem(comment:comment).padding(.leading,15)
-                
                         }
-
                     }}
             }.padding(20)}
-            
-
-       // }.frame(height: 400)
-        
-        
-        
-        
     }
 }
 

@@ -1,8 +1,6 @@
 //
 //  ArticleListView.swift
-//  Food
-//
-//  Created by jinshenghao on 2022/11/17.
+//  BUAASCSE
 //
 
 import Foundation
@@ -50,26 +48,3 @@ struct ArticleListView: View {
 
 }
 
-/*
-struct picItem: View {
-    var store: Store
-    //@State var iindex:Int
-    //let timer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
-    var body: some View {
-        VStack(alignment: .leading) {
-            store.image[0]
-                .renderingMode(.original)
-                .resizable()
-                .frame(width: 185, height: 155)
-                .cornerRadius(5)
-            Text(store.name)
-                .foregroundColor(.primary)
-                .font(.caption)
-        }
-        .padding(.leading, 15)
-        /*.onReceive(timer, perform: { _ in
-            self.iindex += 1
-            self.iindex=self.iindex%(self.store.image.count)
-        })*/
-    }
-}*/

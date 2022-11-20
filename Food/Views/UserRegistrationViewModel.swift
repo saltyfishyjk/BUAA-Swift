@@ -1,8 +1,6 @@
 //
 //  UserRegistrationViewModel.swift
-//  SCSESU
-//
-//  Created by YJK on 11/12/22.
+//  BUAASCSE
 //
 
 import Foundation

@@ -1,8 +1,6 @@
 //
 //  CheckOut.swift
-//  SCSESU
-//
-//  Created by YJK on 2022/11/16.
+//  BUAASCSE
 //
 
 import SwiftUI
@@ -65,11 +63,3 @@ struct MessagesView: View {
         
     }
 }
-
-/*
- struct CheckOut_Previews: PreviewProvider {
- static var previews: some View {
- MessagesView().environmentObject(UserData())
- }
- }
- */

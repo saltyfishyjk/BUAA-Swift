@@ -1,9 +1,6 @@
 //
 //  navBar.swift
-//  FoodDelivery
-//
-//  Created by BqNqNNN on 7/9/20.
-//  Copyright © 2020 BqNqNNN. All rights reserved.
+//  BUAASCSE
 //
 
 import SwiftUI

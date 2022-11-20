@@ -2,8 +2,6 @@
 //  Login.swift
 //  BUAASCSE
 //
-//  Created by YJK on 2022/11/12.
-//
 
 import SwiftUI
 

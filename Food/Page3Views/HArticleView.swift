@@ -1,8 +1,6 @@
 //
 //  HArticleView.swift
-//  Food
-//
-//  Created by jinshenghao on 2022/11/18.
+//  BUAASCSE
 //
 
 import Foundation
@@ -149,10 +147,6 @@ struct HOurPicks: View {
                             }
                             Spacer()
                             
-                            /*
-                             Text(card.price)
-                             .font(.subheadline)
-                             .bold()*/
                         }
                         .padding(.bottom, 30)
                         .padding(.leading, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
@@ -204,19 +198,6 @@ struct HOurPicks: View {
                                     .padding(.all, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                             
                             Spacer()
-                            
-                           /* Button(action: {
-                                withAnimation(.spring(dampingFraction: 0.5)) {
-                                    if(heart == "heart.fill") {heart = "heart"}
-                                    else {heart="heart.fill"}
-                                }
-                            }, label: {
-                                Image(systemName: heart)
-                                    .font(.title)
-                                    .foregroundColor(.red)
-                                
-                            })
-                            .padding(15)*/
                             
                             Button(action: {
                                 withAnimation(.spring(dampingFraction: 0.5)) {

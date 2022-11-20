@@ -1,8 +1,6 @@
 //
 //  User.swift
-//  SCSE
-//
-//  Created by YJK on 2022/11/12.
+//  BUAASCSE
 //
 
 import Foundation
@@ -17,10 +15,3 @@ struct User:Hashable, Codable, Identifiable {
     var name:String // 名字
     var progress:String
 }
-
-/*
- var userData = [
- User(id: "admin", password: "admin", role: 1, name: "管理员")
- ]
- 
- */

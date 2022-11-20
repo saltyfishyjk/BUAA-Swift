@@ -1,8 +1,6 @@
 //
 //  Meal.swift
-//  SCSE
-//
-//  Created by YJK on 11/12/22.
+//  BUAASCSE
 //
 
 import SwiftUI

@@ -1,8 +1,6 @@
 //
 //  UserPreference.swift
-//  Food
-//
-//  Created by jinshenghao on 2022/11/18.
+//  BUAASCSE
 //
 
 import Foundation

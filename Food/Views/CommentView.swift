@@ -1,8 +1,6 @@
 //
 //  CommentView.swift
-//  SCSE
-//
-//  Created by YJK on 2022/11/16.
+//  BUAASCSE
 //
 
 import Foundation
@@ -38,11 +36,3 @@ struct CommentView: View {
         }
     }
 }
-
-/*
-struct CommentView_Previews: PreviewProvider {
-    static var previews: some View {
-        CommentView()
-    }
-}
-*/

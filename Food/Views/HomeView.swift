@@ -1,8 +1,6 @@
 //
 //  HomeView.swift
-//  Food
-//
-//  Created by YJK on 11/12/22.
+//  BUAASCSE
 //
 
 import SwiftUI

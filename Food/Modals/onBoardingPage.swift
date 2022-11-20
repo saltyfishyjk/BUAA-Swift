@@ -1,8 +1,6 @@
 //
 //  onBoardingPage.swift
-//  SCSESU
-//
-//  Created by YJK on 11/12/22.
+//  BUAASCSE
 //
 
 // 欢迎页面滚播图

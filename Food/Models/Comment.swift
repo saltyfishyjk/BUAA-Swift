@@ -1,8 +1,6 @@
 //
 //  Comment.swift
-//  SCSE
-//
-//  Created by YJK on 2022/11/16.
+//  BUAASCSE
 //
 
 import Foundation
