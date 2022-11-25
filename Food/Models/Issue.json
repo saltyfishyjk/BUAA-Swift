@@ -1,8 +1,0 @@
-[
-    {"id": 0, "type": 1, "title": "test1", "content": "testtttt","target":"target","money":5000,
-        "department":"department","stuId":"stuId","stuName":"stuName","progress":0
-    },
-    {"id": 1, "type": 1, "title": "学生会提意见", "content": "测试提案","target":"target","money":5000,
-        "department":"department","stuId":"stuId","stuName":"stuName","progress":0}
-    
-]
