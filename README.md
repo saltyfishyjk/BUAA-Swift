@@ -1,29 +1,15 @@
-<p align="center">
-  <img src="https://png.pngtree.com/template/20191014/ourlarge/pngtree-pin-food-delivery-map-location-delivery-logo-concept-image_318151.jpg" width="200" title="hover text">
-<p align="center"> Another dribble iOS challenge, Food delivery app with custom components and layouts. </p>
-</p>
+# BUAA-Swift-2022 代码
 
+![license: MIT](https://img.shields.io/badge/license-MIT-green)
 
+Author : saltyfishyjk
 
-## Demo
-![](https://media.giphy.com/media/idY5B1rrKSWQe1GW7L/giphy.gif)
-![](https://media.giphy.com/media/THm23xChJRPXji5aM5/giphy.gif)
-![](https://media.giphy.com/media/cJ4dmOLxAcD18nwc13/giphy.gif)
+## 课程简介
 
-## Built With
+《Swift程序设计实践》是北航计算机学院一般专业课，平常有随堂作业，课程结束有大作业。
 
-* [SwfitUI](https://developer.apple.com/xcode/swiftui/) - To build user interfaces across all Apple platforms.
-* [Xcode12-beta 2](https://developer.apple.com/documentation/xcode-release-notes/xcode-12-beta-release-notes) - Latest beta version.
+## 仓库简介
 
+/* TODO */
 
-## Features
-
-* On boarding page with custom animation 
-* Lazy Grid and Matched Geometry Effect
-* Hero image with Parallax Scrolling
-* SwiftUI Paged Scrolling with PageTabViewStyle
-
-## TO DO
-
-* Checkout view.
-* Profile view.
+...
