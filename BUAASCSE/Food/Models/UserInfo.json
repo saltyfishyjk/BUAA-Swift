@@ -1,0 +1,13 @@
+[
+    {"id": 0, "number":"number1", "password": "admin", "role": 1, "name": "adamin", "progress":"积极分子" },
+    {"id": 1, "number":"number2", "password": "admin", "role": 2, "name": "user002",
+        "progress":"预备党员"
+    },
+    {"id": 2, "number": "20373673", "password":"20373673", "role":3, "name": "yjk", "progress":"预备党员"},
+    {"id": 3, "number": "20373427", "password":"20373427", "role":2, "name": "zzy", "progress":"预备党员"},
+    {"id": 4, "number": "20373795", "password":"20373795", "role":2, "name": "jsh", "progress":"重点发展对象"},
+    {"id": 5, "number": "19375203", "password":"19375203", "role":2, "name": "zal", "progress":"正式党员"},
+    {"id": 6, "number": "20373363", "password":"20373363", "role":2, "name":"lzh", "progress":"预备党员"},
+    {"id": 7, "number": "null", "password":"null", "role":2, "name":"lqq", "progress":"正式党员"}
+]
+

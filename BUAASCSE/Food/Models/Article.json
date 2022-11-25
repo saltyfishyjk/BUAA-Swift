@@ -1,0 +1,21 @@
+[
+{
+    "id":0,"likedUserId":[0,1],"staredUserId":[0]
+},
+{
+    "id":1,"likedUserId":[0],"staredUserId":[0,1]
+},
+{
+    "id":2,"likedUserId":[1],"staredUserId":[0]
+},
+{
+    "id":3,"likedUserId":[0,1],"staredUserId":[1]
+},
+{
+    "id":4,"likedUserId":[0],"staredUserId":[0,1]
+}
+
+    
+    
+    
+]
